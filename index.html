@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
+    <script src="java.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header id="header">
+        <button class="menu-button" aria-expanded="false" aria-controls="drawer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="drawer-scrim" aria-hidden="true"></div>
+
+        <nav id="drawer" class="drawer" aria-hidden="true">
+            <div class="menu-button-flex">
+                <!-- 閉じるボタン -->
+                <button class="menu-close" aria-label="メニューを閉じる">
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <a href="./index.html"><img src="./logo.png" class="logo" alt="FLIPPERS"></a>
+            </div>
+            <ul>
+                <li class="menu-button-list"> <a href="./index.html#about">フリッパーズについて</a></li>
+                <li class="menu-button-list"><a href="./index.html#message">店主の思い</a></li>
+                <li class="menu-button-list"><a href="./index.html#item">商品紹介</a></li>
+                <li class="menu-button-list"><a href="./index.html#access">アクセス</a></li>
+                <li class="menu-button-list"><a href="./index.html#question">よくあるご質問</a></li>
+            </ul>
+            <div class="menu-button-sns"><a
+                    href="https://www.instagram.com/flippers.2013?igsi=MXhiY3dkOThjYTZrcA%3D%3D&utm_source=qr"><img
+                        src="./Instagram.png" alt="sns"></a></div>
+        </nav>
+
+        <h1>
+            <a href="./index.html"><img src="./logo.png" class="logo" alt="FLIPPERS"></a>
+        </h1>
+        <img src="./phone.png" class="phone" alt="phone">
+
+    </header>
+    <!-- ヘッダー -->
+
+    <!-- mv -->
+    <main>
+        <div class="top-mv">
+            <img src="access.jpeg" class="top-mv-img" alt="mv">
+            <img src="main tate.png" class="main-tate" alt="メインコピー">
+            <section class="mv-inf">
+                <div class="mv-left"><img src="O P E N.png" class="open" alt="open"></div>
+                <div class="mv-right">
+                    <p class="mv-text">土日祝日：9時〜17時</p>
+                    <p class="mv-text">平日：休み</p>
+                    <a href="https://maps.app.goo.gl/2Ac7h8dpWxdJpaqP6" class="map">MAPを見る
+                        <img src="./Map pin.png" class="map-icon" alt="map-icon">
+                    </a>
+                </div>
+            </section>
+        </div>
+        <!-- mv -->
+
+        <!-- main -->
+
+        <!-- フリッパーズについて -->
+        <section class="box">
+            <div class="title-box">
+                <h2 class="title" id="about">About</h2>
+                <h3 class="sub-title">フリッパーズについて</h3>
+            </div>
+            <img src="./About.jpeg" class="about1" alt="about最初の写真">
+            <div class="text-box">
+                <p class=>宮城県登米市にある古着屋『flippers/フリッパーズ』です。
+                    <br>自宅敷地内の牛舎を改装した店舗にて土日祝日のみ営業しております。
+                    <br>USビンテージ・アウトドア・インポート・ラルフローレン・レギュラー古着も合わせて取り揃えております。
+                    <br>牛舎を改装した２階建の店舗に積み重ねられた古着の山の中からお気に入りの１枚を見つけていただければと思います。
+                </p>
+            </div>
+
+            <div class="swiper-box">
+                <h3 class="title-box">店内散策</h3>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./access.jpeg" alt="about1">
+                            <h4 class="about-title">01 店内外観</h4>
+                            <p>２階建ての改装した牛舎とアメリカンなオブジェ達が出迎えます。</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./About2.jpeg" alt="About2">
+                            <h4 class="about-title">02 別棟</h4>
+                            <p>牛舎の隣の別棟では、掘り出し物が見つかるかも。</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./About3.jpeg" alt="About3">
+                            <h4 class="about-title">03 1階（牛舎）</h4>
+                            <p>店主が長年集めてきたラルフローレンの数々。</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./shoptour.top.jpg" alt="About4">
+                            <h4 class="about-title">04 階段</h4>
+                            <p>牛舎だった名残の階段を上がると、2階の景色が少しずつ見えてきます。</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./About5.jpg" alt="About5">
+                            <h4 class="about-title">05 2階（牛舎）</h4>
+                            <p>目の前に広がるのは、店主が選び抜いた一点物たちの景色です。</p>
+                        </div>
+                    </div>
+                    <!-- ドット -->
+                    <div class="swiper-pagination"></div>
+                    <!-- 矢印 -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <div class="cta-btn">
+                    <a href="./About.html">店内をもっと見る
+                        <img src="./yajirusi.png" class="cta-btn-icon" alt="矢印"></a>
+                </div>
+            </div>
+        </section>
+        <!-- フリッパーズについて -->
+
+        <!-- 店主の想い -->
+        <section class="red-box-message">
+            <div class="red-box-title">
+                <h2 class="title" id="message">Message</h2>
+                <h3 class="sub-title">店主の想い </h3>
+            </div>
+            <div class="profile">
+                <img src="./iwabutisan.jpg" class="profile-img" alt="岩渕さん">
+                <p>店主
+                    <br>○○○○
+                </p>
+            </div>
+            <div class="text-box">
+                <div class="message-box">
+                    <h4>Message1</h4>
+                    <p class="important">1点ずつ、
+                        <br>直接見て
+                        <br>セレクトしています。
+                    </p>
+                    <p>
+                        ベール仕入れではなく、一着一着を店主自身の目で確かめ、思いを込めて選んでいます。
+                    </p>
+                </div>
+                <div class="message-box">
+                    <h4>Message2</h4>
+                    <p class="important">服も、
+                        <br>人も、
+                        <br>ご縁を大切に。
+                    </p>
+                    <p>
+                        古着との出会い、お客様との出会い、人と人との繋がりを大切にするお店を目指しています。
+                    </p>
+                </div>
+            </div>
+            <div class="img-wrap">
+                <img src="./message.jpae.jpg" class="img-wrap-img" alt="message">
+                <p class="img-wrap-text"><span class="important">「これ、いいですね」</span>
+                    <br>から始まる会話が、この店では毎週末繰り返されています。
+                </p>
+            </div>
+        </section>
+        <!-- 店主の想い -->
+
+
+        <!-- SNS -->
+        <section class="box">
+            <div class="title-box">
+                <h2 class="title" id="sns">SNS</h2>
+                <h3 class="sub-title">Instagram</h3>
+            </div>
+            <div class="sns-img">
+                <img src="./Instagram1.png" alt="インスタ1">
+                <img src="./Instagram2.PNG" alt="インスタ2">
+                <img src="./Instagram 3.PNG" alt="インスタ3">
+            </div>
+            <div class="cta-box">
+                <p class="cta-text">入荷情報やイベント情報を、
+                    <br>来店前にチェック
+                </p>
+                <div class="cta-btn">
+                    <a href="https://www.instagram.com/flippers.2013?igsi=MXhiY3dkOThjYTZrcA%3D%3D&utm_source=qr">@flippers.2013
+                        <img src="./yajirusi.png" class="cta-btn-icon" alt="矢印"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SNS -->
+        <!-- 商品紹介 -->
+        <section class="box">
+            <div class="title-box">
+                <h2 class="title" id="item">Item</h2>
+                <h3 class="sub-title">商品紹介</h3>
+            </div>
+            <div class="text-box">
+                <p>オンライン販売は行っておりません。
+                    <br>ここでご紹介するのは、店頭に並んでいる商品のほんの一部です。
+                    <br>実物はぜひ店内でお確かめください。
+                </p>
+            </div>
+            <ul class="item-list">
+                <div class="item-card js-item">
+                    <li><img src="./item1.jpeg" class="item" alt="商品1"></li>
+                    <p>RalphLauren/ニット</p>
+                </div>
+                <div class="item-card js-item">
+                    <li><img src="./item2.jpeg" class="item" alt="商品2"></li>
+                    <p>RalphLauren/ハーフパンツ</p>
+                </div>
+                <div class="item-card js-item">
+                    <li><img src="./item3.jpeg" class="item" alt="商品3"></li>
+                    <p>Patagonia/フリースベスト</p>
+                </div>
+
+                <div class="item-card js-item">
+                    <li><img src="./item4.jpeg" class="item" alt="商品4"></li>
+                    <p>Carhartt/アクティブジャケット</p>
+                </div>
+            </ul>
+
+            <!-- ライトボックス -->
+
+            <div class="item-modal-overlay" id="item-modal-overlay">
+
+                <div class="item-modal-box">
+                    <button class="item-modal-close" id="item-modal-close">×</button>
+                    <button class="item-modal-nav prev" id="item-modal-prev">←</button>
+                    <div class="item-modal-photo">
+                        <img id="item-modal-img" src="" alt="">
+                    </div>
+
+                    <button class="item-modal-nav next" id="item-modal-next">→</button>
+                    <div class="item-modal-info">
+                        <div class="item-modal-desc" id="item-modal-desc"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <div class="cta-btn">
+                    <a href="./item.html">商品をもっと見る
+                        <img src="./yajirusi.png" class="cta-btn-icon" alt="矢印"></a>
+                </div>
+            </div>
+        </section>
+        <!-- 商品紹介 -->
+
+        <!-- アクセス -->
+
+        <div class="red-box">
+            <div class="title-box">
+                <h2 class="title" id="access">ACCESS</h2>
+                <h3 class="sub-title">アクセス </h3>
+            </div>
+            <img src="./access.jpeg" class="access-img" alt="アクセス">
+            <div class="text-box">
+                <p>住所</p>
+                <p class="highlight">〒987-0304
+                    <br>宮城県登米市米山町字内17-1
+                </p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3115.719695232544!2d141.21120414013293!3d38.65532506106898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8904a6e408d02d%3A0x87da014c7e18f2d3!2z44OV44Oq44OD44OR44O844K6!5e0!3m2!1sja!2sjp!4v1787819359289!5m2!1sja!2sjp"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+                <div class="cta-box">
+                    <div class="access-cta-btn">
+                        <a href="https://maps.app.goo.gl/2Ac7h8dpWxdJpaqP6" class="map">MAPを見る
+                            <img src="./Map pin.png" class="map-icon" alt="map-icon">
+                        </a>
+                    </div>
+                </div>
+                <p>営業時間</p>
+                <p class="highlight"> 土日祝日09:00～17:00（平日休み）
+                </p>
+            </div>
+        </div>
+        <!-- アクセス -->
+
+        <!-- よくある質問 -->
+        <section class="red-box-question">
+            <div class="title-box">
+                <h2 class="title" id="question">Q&A</h2>
+                <h3 class="sub-title">よくあるご質問</h3>
+            </div>
+
+            <ul class="accordion">
+                <li class="acc">
+                    <button type="button" class="acc-question" aria-expanded="false">
+                        <span>クレジットカードは使えますか？</span>
+                        <span class="acc-icon">＋</span>
+                    </button>
+
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <p>
+                                使えません。お支払いは現金のみとなっていますので、
+                                予めご了承ください。
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="acc">
+                    <button type="button" class="acc-question" aria-expanded="false">
+                        <span>駐車場はありますか？</span>
+                        <span class="acc-icon">＋</span>
+                    </button>
+
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <p>はい。あります。10台ほど止めることが可能です。</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="acc">
+                    <button type="button" class="acc-question" aria-expanded="false">
+                        <span>平日は営業していないのですか？</span>
+                        <span class="acc-icon">＋</span>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <p>平日はお休みです。営業日は土日祝日となっています、営業日については、Instagramでお知らせすることが多いため、ご確認ください。</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="acc">
+                    <button type="button" class="acc-question" aria-expanded="false">
+                        <span>買取はしていますか？</span>
+                        <span class="acc-icon">＋</span>
+                    </button>
+
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <p>買取は対応しておりません。</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="acc">
+                    <button type="button" class="acc-question" aria-expanded="false">
+                        <span>取り置きは可能ですか？</span>
+                        <span class="acc-icon">＋</span>
+                    </button>
+
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <p>柔軟に対応させていただきます。ご相談ください。</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- よくある質問 -->
+    </main>
+    <!-- フッター -->
+    <footer id="footer">
+        <div class="wrapper">
+            <a href="./index.html"><img src="./logo.png" class="logo" alt="logo"></a>
+            <a href="https://www.instagram.com/flippers.2013?igsi=MXhiY3dkOThjYTZrcA%3D%3D&utm_source=qr"><img
+                    src="./Instagram.png" alt="icon"></a>
+        </div>
+        <nav>
+            <ul class="footer-list">
+                <li><a href="./index.html#about">フリッパーズについて</a></li>
+                <li><a href="./item.html">商品一覧</a></li>
+                <li><a href="./index.html#access">アクセス</a></li>
+                <li><a href="./index.html#question">よくあるご質問</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+                <li><a href="#">特定商取引法に基づく表示</a></li>
+            </ul>
+        </nav>
+        <p class="copy">&copy;古着屋フリッパーズ</p>
+    </footer>
+    <!-- フッター -->
+</body>
+
+</html>

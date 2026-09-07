@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./java.js" defer></script>
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="./item.css">
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header id="header">
+        <button class="menu-button" aria-expanded="false" aria-controls="drawer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="drawer-scrim" aria-hidden="true"></div>
+
+        <nav id="drawer" class="drawer" aria-hidden="true">
+            <div class="menu-button-flex">
+                <!-- 閉じるボタン -->
+                <button class="menu-close" aria-label="メニューを閉じる">
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <a href="./index.html"><img src="./logo.png" class="logo" alt="FLIPPERS"></a>
+            </div>
+            <ul>
+                <li class="menu-button-list"> <a href="./index.html#about">フリッパーズについて</a></li>
+                <li class="menu-button-list"><a href="./index.html#message">店主の思い</a></li>
+                <li class="menu-button-list"><a href="./index.html#item">商品紹介</a></li>
+                <li class="menu-button-list"><a href="./index.html#access">アクセス</a></li>
+                <li class="menu-button-list"><a href="./index.html#question">よくあるご質問</a></li>
+            </ul>
+            <div class="menu-button-sns"><a
+                    href="https://www.instagram.com/flippers.2013?igsi=MXhiY3dkOThjYTZrcA%3D%3D&utm_source=qr"><img
+                        src="./Instagram.png" alt="sns"></a></div>
+        </nav>
+        <h1>
+            <a href="./index.html"><img src="./logo.png" class="logo" alt="FLIPPERS"></a>
+        </h1>
+        <img src="./phone.png" class="phone" alt="phone">
+    </header>
+    <!-- ヘッダー -->
+
+    <main>
+        <section class="mv">
+            <img src="./item-mv.jpg" alt="top">
+            <div class="title-box">
+                <h2 class="mv-title">Item
+                </h2>
+                <h3 class="sub-title">商品紹介</h3>
+                <p class="title-box-text">店主がこだわりを持って選んだ商品の一部です。
+                </p>
+            </div>
+        </section>
+
+        <label for="genre">ジャンル</label>
+        <select name="genre" id="genre" class="genre">
+            <option value="">ジャンルを選択</option>
+            <option value="outer">アウター</option>
+            <option value="tops">トップス</option>
+            <option value="pants">パンツ</option>
+            <option value="bags">バック</option>
+            <option value="shoes">靴</option>
+        </select>
+
+        <ul class="item-list  item-list">
+            <div class="item-card js-item" data-genre="tops">
+                <li><img src="./item1.jpeg" class="item" alt="ラルフニット"></li>
+                <p>RalphLauren/ニット</p>
+            </div>
+            <div class="item-card js-item" data-genre="pants">
+                <li><img src="./item2.jpeg" class="item" alt="ラルフハーフパンツ"></li>
+                <p>RalphLauren/ハーフパンツ</p>
+            </div>
+            <div class="item-card js-item" data-genre="outer">
+                <li><img src="./item3.jpeg" class="item" alt="パタゴニアベスト"></li>
+                <p>Patagonia/フリースベスト</p>
+            </div>
+
+            <div class="item-card js-item" data-genre="outer">
+                <li><img src="./item4.jpeg" class="item" alt="カーハートジャケット"></li>
+                <p>Carhartt/アクティブジャケット</p>
+            </div>
+
+            <div class="item-card js-item" data-genre="shoes">
+                <li><img src="./item5.jpeg" class="item" alt="ダナー"></li>
+                <p>Danner/ブーツ</p>
+            </div>
+            <div class="item-card js-item" data-genre="outer">
+                <li><img src="./item6.jpeg" class="item" alt="シェラデザイン"></li>
+                <p>シェラデザイン/マウンテンパーカー</p>
+            </div>
+            <div class="item-card js-item" data-genre="tops">
+                <li><img src="./item7.jpeg" class="item" alt="usa製T"></li>
+                <p>usa製/Tシャツ</p>
+            </div>
+            <div class="item-card js-item" data-genre="tops">
+                <li><img src="./item8.jpeg" class="item" alt="VANSON"></li>
+                <p>VANSON/Tシャツ</p>
+            </div>
+            <div class="item-card js-item" data-genre="tops">
+                <li><img src="./item9.jpeg" class="item" alt="Chanmpion"></li>
+                <p>Chanmpion/ベースボールシャツ</p>
+            </div>
+            <div class="item-card js-item" data-genre="outer">
+                <li><img src="./item10.jpeg" class="item" alt="Mocoys"></li>
+                <p>REALMocoYs/レザージャケット</p>
+            </div>
+            <div class="item-card js-item" data-genre="outer">
+                <li><img src="./item11.jpeg" class="item" alt="ノースフェイス"></li>
+                <p>THENORTHFACE/ダウンジャケット</p>
+            </div>
+            <div class="item-card js-item" data-genre="shoes">
+                <li><img src="./item12.jpeg" class="item" alt="adidas"></li>
+                <p>adidas/26cm</p>
+            </div>
+            <div class="item-card js-item" data-genre="bags">
+                <li><img src="./item13.jpeg" class="item" alt="パタゴニアバック"></li>
+                <p>Patagonia/ショルダーバック</p>
+            </div>
+        </ul>
+
+
+        <!-- ライトボックスモーダル -->
+        <div class="item-modal-overlay" id="item-modal-overlay">
+            <div class="item-modal-box">
+                <button class="item-modal-close" id="item-modal-close">×</button>
+                <button class="item-modal-nav prev" id="item-modal-prev">←</button>
+                <div class="item-modal-photo photo-block" id="item-modal-photo">
+                    <img id="item-modal-img" src="" alt="">
+                </div>
+                <button class="item-modal-nav next" id="item-modal-next">→</button>
+                <div class="item-modal-info">
+                    <div class="item-modal-desc" id="item-modal-desc"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <p class="cta-text">商品についてのご質問はこちら</p>
+            <div class="cta-btn">
+                <a href="#" class="cta-btn-phone">お問い合わせ
+                    <img src="phone.png" class="cta-btn-icon" alt="phone">
+                </a>
+            </div>
+        </div>
+
+    </main>
+    <!-- フッター -->
+    <footer id="footer">
+        <div class="wrapper">
+            <a href="./index.html"><img src="./logo.png" class="logo" alt="logo"></a>
+            <a href="https://www.instagram.com/flippers.2013?igsi=MXhiY3dkOThjYTZrcA%3D%3D&utm_source=qr"><img
+                    src="./Instagram.png" alt="icon"></a>
+        </div>
+        <nav>
+            <ul class="footer-list">
+                <li><a href="./index.html#about">フリッパーズについて</a></li>
+                <li><a href="./item.html">商品一覧</a></li>
+                <li><a href="./index.html#access">アクセス</a></li>
+                <li><a href="./index.html#question">よくあるご質問</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+                <li><a href="#">特定商取引法に基づく表示</a></li>
+            </ul>
+        </nav>
+        <p class="copy">&copy;古着屋フリッパーズ</p>
+    </footer>
+    <!-- フッター -->
+
+</body>
+
+</html>

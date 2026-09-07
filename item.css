@@ -1,0 +1,68 @@
+body {
+    background-color: #622E2E;
+    color: #FFF5E6;
+}
+
+label {
+    padding-inline: 20px;
+}
+
+.genre {
+    width: 100%;
+    padding: 15px 20px;
+    font-weight: bold;
+}
+
+
+.cta-btn {
+    display: inline-block;
+}
+
+.cta-btn-phone {
+    background-color: #fff;
+    color: #622E2E;
+    display: flex;
+    align-items: center;
+    border-radius: 64px;
+    justify-content: center;
+    padding: 12px
+}
+
+.cta-box {
+    text-align: center;
+}
+
+
+/* 左の棒 */
+
+.cta-text {
+    position: relative;
+}
+
+.cta-text::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: #FFF5E6;
+    left: 24%;
+    top: 8%;
+    transform: rotate(-25deg);
+}
+
+/* 右の棒 */
+
+.cta-text::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: #FFF5E6;
+    right: 24%;
+    top: 8%;
+    transform: rotate(25deg);
+}
+
+.cta-box {
+    padding-block: 64px;
+}
