@@ -52,6 +52,13 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+// メニュー内のリンクをクリックしたら閉じる
+const menuLinks = drawer.querySelectorAll('a');
+
+menuLinks.forEach((link) => {
+    link.addEventListener('click', closeMenu);
+});
+
 // フリッパーズについてのスライダー
 const swiper = new Swiper('.swiper', {
     slidesPerView: 1.15,

@@ -311,6 +311,9 @@ body {
     margin-bottom: 10px;
 }
 
+.acc-question{
+font-size: 16px;
+}
 .acc-inner {
     padding: 16px;
 }
