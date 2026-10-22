@@ -9,7 +9,7 @@ body {
 .red-box {
     color: #FFF5E6;
     background-color: #622E2E;
-    padding-block: 32px;
+    padding-block: var(--space-64);
 }
 
 /*==================ヘッダー================*/
@@ -23,8 +23,8 @@ body {
 .main-tate {
     position: absolute;
     width: 24%;
-    top: 40px;
-    right: 40px;
+    top: var(--space-40);
+    right: var(--space-40);
 }
 
 .top-mv-img {
@@ -58,21 +58,21 @@ body {
 
             #622E2E 100%);
     width: 100%;
-    padding-block: 64px 32px;
-    padding-inline: 42px;
+    padding-block: var(--space-64) var(--space-40);
+    padding-inline: var(--space-40);
     bottom: 0px;
     left: 0px;
-    gap: 42px;
+    gap: var(--space-40);
 }
 
 .mv-right {
     display: flex;
-    gap: 16px;
+    gap: var(--space-16);
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     border-left: 1px solid #FFF5E6;
-    padding-left: 42px;
+    padding-left: var(--space-40);
 }
 
 .mv-left {
@@ -86,11 +86,12 @@ body {
 /* フリッパーズについて */
 
 .cta-btn {
-    gap: 8px;
+    gap: var(--space-8);
     background-color: #622E2E;
     display: inline-flex;
     border-radius: 30px;
-    padding: 8px 24px;
+    padding: var(--space-8) var(--space-24);
+    min-height: 44px; /* タップしやすい最小の高さ */
     align-items: flex-end;
     box-shadow: 0px 5px 0px rgba(46, 20, 20, 1);
     justify-content: center;
@@ -98,26 +99,26 @@ body {
 }
 
 .about1 {
-    padding-block: 20px;
+    padding-bottom: var(--space-24);
 }
 
 .swiper {
   width: 100%;
-  padding-inline: 20px;
+  padding-inline: var(--space-24);
 }
 
 .swiper-box{
-    padding-top: 20px;
+    padding-top: var(--space-40);
 }
 
 .swiper-slide{
     border-radius: 10px;
     box-shadow: 4px 4px 6px rgba(0,0,0,0.5);
-    padding: 20px;
+    padding: var(--space-24);
 }
 
 .swiper-wrapper{
-    padding-block: 24px;
+    padding-block: var(--space-24);
 }
 
 .swiper-button-next,
@@ -138,14 +139,14 @@ body {
 .red-box-message {
     color: #FFF5E6;
     background-color: #622E2E;
-    padding-top: 32px;
+    padding-top: var(--space-64);
 
 }
 
 .red-box-title {
     text-align: right;
-    padding-inline: 20px;
-    padding-bottom: 20px;
+    padding-inline: var(--space-24);
+    padding-bottom: var(--space-40);
 }
 
 .red-box-title .title {
@@ -155,7 +156,7 @@ body {
 
 .profile {
     width: 100%;
-    padding-block: 20px 10px;
+    padding-bottom: var(--space-8);
     text-align: center;
 }
 
@@ -163,18 +164,18 @@ body {
     border-radius: 50%;
     width: 30%;
     height: auto;
-    padding-bottom: 10px;
+    padding-bottom: var(--space-8);
 }
 
 .message-box {
-    padding-top: 32px;
+    padding-top: var(--space-40);
 }
 
 .important {
     font-size: 32px;
     font-weight: bold;
     line-height: 135%;
-    padding-block: 8px;
+    padding-block: var(--space-8);
 
 }
 
@@ -188,7 +189,7 @@ body {
             #622E2E 50%,
 
             #622E2E 100%);
-    padding-top: 32px;
+    padding-top: var(--space-40);
 }
 
 .img-wrap-img {
@@ -198,8 +199,8 @@ body {
 
 .img-wrap-text {
     position: absolute;
-    bottom: 24px;
-    padding-inline: 20px
+    bottom: var(--space-24);
+    padding-inline: var(--space-24);
 }
 
 /* sns */
@@ -213,38 +214,37 @@ body {
 .sns-img {
     width: 100%;
     display: flex;
-    gap: 10px;
-    padding-inline: 20px;
+    gap: var(--space-8);
+    padding-inline: var(--space-24);
 }
 
 /* 左の棒 */
 
+/* 文字の幅に合わせて棒を置く（文言が変わっても重ならない） */
 .cta-text {
     position: relative;
+    display: inline-block;
+    padding-inline: var(--space-24);
 }
 
-.cta-text::before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 37px;
-    background-color: #622E2E;
-    left: 24%;
-    top: 8%;
-    transform: rotate(-25deg);
-}
-
-/* 右の棒 */
-
+.cta-text::before,
 .cta-text::after {
     content: "";
     position: absolute;
+    top: 50%;
     width: 2px;
     height: 37px;
     background-color: #622E2E;
-    right: 24%;
-    top: 8%;
-    transform: rotate(25deg);
+}
+
+.cta-text::before {
+    left: var(--space-4);
+    transform: translateY(-50%) rotate(-25deg);
+}
+
+.cta-text::after {
+    right: var(--space-4);
+    transform: translateY(-50%) rotate(25deg);
 }
 
 /* sns */
@@ -255,7 +255,7 @@ body {
 
 /* アクセス */
 .access-img {
-    padding-block: 20px;
+    padding-bottom: var(--space-24);
 }
 
 
@@ -264,13 +264,69 @@ body {
     font-size: 22px;
 }
 
+.highlight + iframe {
+    display: block;
+    margin-top: var(--space-16);
+}
+
+/* 初めての方へ */
+.first-visit {
+    margin-top: var(--space-40);
+    padding-inline: var(--space-24);
+}
+
+.first-visit-title {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: var(--space-16);
+}
+
+.first-visit-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+}
+
+.first-visit-list li {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    background-color: #FFF5E6;
+    color: #622E2E;
+    border-radius: 8px;
+    padding: var(--space-16);
+}
+
+/* 5項目なので最後だけ横いっぱいに */
+.first-visit-list li:last-child {
+    grid-column: 1 / -1;
+}
+
+.first-visit-label {
+    font-size: 12px;
+}
+
+.first-visit-value {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.first-visit-note {
+    padding-top: var(--space-16);
+}
+
+.first-visit-note a {
+    text-decoration: underline;
+}
+
 .cta-box {
     text-align: center;
-    padding-top: 32px;
+    padding-top: var(--space-40);
 }
 
 .access-cta-btn {
-    padding-bottom: 32px;
+    padding-bottom: var(--space-40);
     text-align: center;
     display: inline-block;
 }
@@ -279,14 +335,21 @@ body {
 
 /* Q&A */
 .red-box-question {
-    padding-top: 32px;
+    padding-block: var(--space-64);
     color: #FFF5E6;
     background-color: #622E2E;
 }
 
+/* アクセスと同じ背景なので、線で章を区切る */
+.red-box + .red-box-question {
+    border-top: 1px solid rgba(255, 245, 230, .3);
+}
+
 .accordion {
-    padding-inline: 20px;
-    padding-block: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    padding-inline: var(--space-24);
 }
 
 .acc-body {
@@ -307,15 +370,14 @@ body {
     cursor: pointer;
     text-align: left;
     color: #FFF5E6;
-    padding: 16px;
-    margin-bottom: 10px;
+    padding: var(--space-16);
 }
 
 .acc-question{
 font-size: 16px;
 }
 .acc-inner {
-    padding: 16px;
+    padding: var(--space-16);
 }
 
 .acc-icon {
@@ -327,5 +389,381 @@ font-size: 16px;
 }
 
 .box {
-    padding-block: 32px;
+    padding-block: var(--space-64);
+}
+
+/* 同じ背景のセクションが続く場合は余白を重ねない */
+.box + .box {
+    padding-top: 0;
+}
+
+/* アクセス内のMAPボタンはブロック内の要素扱い */
+.text-box .cta-box {
+    padding-top: var(--space-24);
+}
+
+/* ====================
+   Tablet：768px以上
+==================== */
+@media (min-width: 768px) {
+    .img-wrap-text {
+        padding-inline: var(--pad-inline);
+    }
+}
+
+/* ====================
+   PC：1024px以上
+   共通クラスは common.css が後から読まれるので、親クラス付きで詳細度を上げて上書きする
+==================== */
+@media (min-width: 1024px) {
+
+    /* セクション上下の余白 */
+    .box,
+    .red-box,
+    .red-box-question {
+        padding-block: var(--section-y);
+    }
+
+    .red-box-message {
+        padding-top: var(--section-y);
+    }
+
+    /* ① MV */
+    .top-mv {
+        height: calc(100svh - var(--header-h));
+        min-height: 600px;
+    }
+
+    .top-mv-img {
+        object-position: center 60%;
+    }
+
+    .main-tate {
+        width: auto;
+        height: 56%;
+        top: var(--space-64);
+        right: var(--pad-inline);
+    }
+
+    /* SPと同じグラデーション帯を画面幅いっぱいに敷く */
+    .mv-inf {
+        padding-block: var(--space-64) var(--space-40);
+        padding-inline: var(--pad-inline);
+        align-items: center;
+    }
+
+    /* ② フリッパーズについて */
+    .box--about {
+        display: grid;
+        grid-template-columns: 5fr 7fr;
+        grid-template-rows: auto 1fr auto auto;
+        grid-template-areas:
+            "title img"
+            "text img"
+            "swiper swiper"
+            "cta cta";
+        column-gap: var(--space-64);
+        padding-inline: var(--pad-inline);
+    }
+
+    .box--about > * {
+        min-width: 0;
+    }
+
+    .box--about > .title-box {
+        grid-area: title;
+        align-self: start;
+        padding-inline: 0;
+    }
+
+    .box--about > .text-box {
+        grid-area: text;
+        align-self: start;
+        padding-inline: 0;
+    }
+
+    .box--about > .about1 {
+        grid-area: img;
+        padding-bottom: 0;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .box--about > .swiper-box {
+        grid-area: swiper;
+        padding-top: var(--space-64);
+    }
+
+    .swiper-box > .title-box {
+        padding-inline: 0;
+    }
+
+    /* swiper-bundle.css が後から読まれるので親クラス付きで上書き */
+    .box--about .swiper {
+        padding-inline: var(--space-64);
+    }
+
+    /* 店内散策：スマホ版と同じカードを1枚ずつ大きく見せる */
+    .box--about .swiper {
+        max-width: 960px;
+        margin-inline: auto;
+    }
+
+    .box--about .swiper-slide {
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(98, 46, 46, .12);
+        padding: var(--space-24);
+        transition: opacity .4s ease;
+    }
+
+    /* 左右の余白（矢印の置き場）にはみ出した隣のスライドは見せない */
+    .box--about .swiper-slide:not(.swiper-slide-visible) {
+        opacity: 0;
+    }
+
+    .box--about .swiper-slide img {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .box--about .about-title {
+        font-size: 20px;
+        padding-top: var(--space-16);
+    }
+
+    .box--about > .cta-box {
+        grid-area: cta;
+    }
+
+    /* ③ 店主の想い */
+    .red-box-title .title {
+        font-size: clamp(90px, 9vw, 136px);
+    }
+
+    .message-inner {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        column-gap: var(--space-64);
+        align-items: start;
+        padding-inline: var(--pad-inline);
+    }
+
+    .message-inner > .text-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: var(--space-40);
+        padding-inline: 0;
+    }
+
+    .message-inner .message-box {
+        padding-top: 0;
+    }
+
+    .profile-img {
+        width: 200px;
+    }
+
+    .important {
+        font-size: 40px;
+    }
+
+    /* 2カラムの中では40pxだと「セレクトしています。」が折り返すので幅に合わせて縮める */
+    .message-inner .important {
+        font-size: clamp(26px, 2.7vw, 36px);
+    }
+
+    .img-wrap {
+        margin-top: var(--space-64);
+    }
+
+    .img-wrap-img {
+        width: 100%;
+        aspect-ratio: 21 / 9;
+        object-fit: cover;
+    }
+
+    .img-wrap-text {
+        left: 0;
+        right: 0;
+        bottom: var(--space-64);
+        padding-inline: var(--pad-inline);
+        font-size: 18px;
+    }
+
+    /* ④ SNS */
+    .box--sns {
+        display: grid;
+        grid-template-columns: 5fr 7fr;
+        grid-template-areas:
+            "title imgs"
+            "cta imgs";
+        column-gap: var(--space-64);
+        align-items: center;
+        padding-inline: var(--pad-inline);
+    }
+
+    .box--sns > * {
+        min-width: 0;
+    }
+
+    .box--sns > .title-box {
+        grid-area: title;
+        padding-inline: 0;
+    }
+
+    .box--sns > .sns-img {
+        grid-area: imgs;
+        gap: var(--space-16);
+        padding-inline: 0;
+    }
+
+    .box--sns > .cta-box {
+        grid-area: cta;
+    }
+
+    .sns-img img {
+        border-radius: 8px;
+    }
+
+    /* ⑤ 商品紹介 */
+    .box--item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "title text"
+            "list list"
+            "cta cta";
+        column-gap: var(--space-64);
+        padding-inline: var(--pad-inline);
+    }
+
+    .box--item > * {
+        min-width: 0;
+    }
+
+    .box--item > .title-box {
+        grid-area: title;
+        padding-inline: 0;
+    }
+
+    .box--item > .text-box {
+        grid-area: text;
+        align-self: end;
+        margin-bottom: var(--space-40);
+        padding-inline: 0;
+    }
+
+    .box--item > .item-list {
+        grid-area: list;
+        grid-template-columns: repeat(4, 1fr);
+        padding-inline: 0;
+    }
+
+    .box--item > .cta-box {
+        grid-area: cta;
+    }
+
+    /* ⑥ アクセス */
+    .red-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "title title"
+            "img info"
+            "first first";
+        column-gap: var(--space-64);
+        padding-inline: var(--pad-inline);
+    }
+
+    .red-box > * {
+        min-width: 0;
+    }
+
+    .red-box > .title-box {
+        grid-area: title;
+        padding-inline: 0;
+    }
+
+    .red-box > .access-img {
+        grid-area: img;
+        padding-bottom: 0;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .red-box > .text-box {
+        grid-area: info;
+        padding-inline: 0;
+    }
+
+    .red-box iframe {
+        height: 280px;
+        border-radius: 12px;
+    }
+
+    .highlight {
+        font-size: 24px;
+    }
+
+    .red-box > .first-visit {
+        grid-area: first;
+        margin-top: var(--space-64);
+        padding-inline: 0;
+    }
+
+    .first-visit-list {
+        grid-template-columns: repeat(5, 1fr);
+        gap: var(--space-16);
+    }
+
+    .first-visit-list li:last-child {
+        grid-column: auto;
+    }
+
+    /* ⑦ Q&A */
+    .red-box-question {
+        display: grid;
+        grid-template-columns: 4fr 8fr;
+        column-gap: var(--space-64);
+        padding-inline: var(--pad-inline);
+    }
+
+    .red-box-question > * {
+        min-width: 0;
+    }
+
+    .red-box-question > .title-box {
+        position: sticky;
+        top: calc(var(--header-h) + var(--space-40));
+        align-self: start;
+        margin-bottom: 0;
+        padding-inline: 0;
+    }
+
+    .red-box-question > .accordion {
+        padding-inline: 0;
+    }
+
+    .acc-question {
+        padding: var(--space-24);
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1024px) and (hover: hover) {
+    .cta-btn {
+        transition: transform .15s, box-shadow .15s;
+    }
+
+    .cta-btn:hover {
+        transform: translateY(3px);
+        box-shadow: 0 2px 0 rgba(46, 20, 20, 1);
+    }
+
 }

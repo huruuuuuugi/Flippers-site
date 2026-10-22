@@ -1,5 +1,43 @@
 @charset "UTF-8";
 
+/* 余白スケール（4・8・16・24・40・64 の6段のみ使用） */
+:root {
+    --space-4: 4px;
+    --space-8: 8px;
+    --space-16: 16px;
+    --space-24: 24px;
+    --space-40: 40px;
+    --space-64: 64px;
+
+    /* 固定ヘッダーの高さ（中身52px + 上下余白） */
+    --header-h: calc(52px + var(--space-16) * 2);
+
+    /* PC用（128はセクション上下の余白のみに使う） */
+    --space-128: 128px;
+    --content-max: 1120px;
+    --section-y: var(--space-64);
+    /* 全幅要素にだけ使う（% は包含ブロックの幅で解決される） */
+    --pad-inline: var(--space-24);
+}
+
+@media (min-width: 768px) {
+    :root {
+        --pad-inline: var(--space-40);
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --section-y: var(--space-128);
+        --pad-inline: max(var(--space-40), calc((100% - var(--content-max)) / 2));
+    }
+}
+
+/* ページ内リンクで見出しがヘッダーに隠れないように */
+html {
+    scroll-padding-top: var(--header-h);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -17,12 +55,16 @@ img {
     height: auto;
 }
 
+body {
+    font-family: "Inter", sans-serif;
+}
+
 ul {
     list-style: none;
 }
 
 h2 {
-    font-family: "Impact", sans-serif;
+    font-family: "Anton", "Impact", sans-serif;
     font-size: 80px;
     line-height: 100%;
 }
@@ -44,9 +86,18 @@ p {
     line-height: 1.7;
 }
 
+/* 余白の階層
+   64: セクション同士 / 40: 見出し→中身・ブロック同士 / 24: ブロック内の要素同士
+   16: 関連する要素同士 / 8: 密接な要素同士 / 4: 微調整 */
+
+section > .title-box,
+.red-box > .title-box {
+    margin-bottom: var(--space-40);
+}
+
 .text-box,
 .title-box {
-    padding-inline: 20px;
+    padding-inline: var(--space-24);
     width: 100%;
 }
 
@@ -63,8 +114,8 @@ header{
 .menu-button-flex {
     display: flex;
     align-items: center;
-    padding: 8px;
-    gap: 8px;
+    padding: var(--space-8);
+    gap: var(--space-8);
     border-bottom: 1px solid #FFF5E6;
 }
 
@@ -76,7 +127,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    gap: var(--space-4);
 }
 
 .menu-close {
@@ -117,7 +168,7 @@ header{
 }
 
 .menu-button-list {
-    padding: 20px;
+    padding: var(--space-24);
 }
 
 
@@ -207,11 +258,13 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 12px;
+    height: var(--header-h);
+    padding: var(--space-16) var(--space-24);
 }
 
 .logo {
-    width: 174px;
+    width: auto;
+    height: 36px; /* 余白を切り詰めた画像なので、文字の大きさは以前と同じ */
 }
 
 .menu {
@@ -222,23 +275,35 @@ header{
     width: 30px;
 }
 
+.phone-link {
+    display: flex;
+}
+
+/* PC用グローバルナビ（スマホではハンバーガーを使う） */
+.gnav {
+    display: none;
+}
+
 /* ヘッダー */
 
 /* cta */
 .map {
-    padding: 10px 40px;
+    padding: var(--space-8) var(--space-40);
+    min-height: 44px; /* タップしやすい最小の高さ */
     background: #D4A23E;
+    color: #622E2E; /* クリーム文字だとマスタード上で読みにくいため */
+    font-weight: bold;
     border-radius: 50px;
     white-space: nowrap;
     box-shadow: 0px 5px 0px rgba(121, 92, 34, 1);
     display: flex;
-    gap: 4px;
+    gap: var(--space-4);
     justify-content: center;
     align-items: center;
 }
 
 .cta-text {
-    padding-bottom: 4px;
+    padding-bottom: var(--space-4);
     font-size: 13px;
     line-height: 1.5;
     font-weight: bold;
@@ -249,14 +314,19 @@ header{
     width: 15%;
 }
 
+/* 白いピン画像を文字色（マルーン）に寄せる */
+.map-icon {
+    filter: brightness(0) invert(19%) sepia(25%) saturate(2000%) hue-rotate(325deg);
+}
+
 main{
-    padding-top: 88px;
+    padding-top: var(--header-h);
 }
 
 /* フッター */
 #footer {
     background-color: #622E2E;
-    padding: 32px 20px;
+    padding: var(--space-40) var(--space-24);
     border-top: 1px solid #FFF5E6;
 
 }
@@ -269,7 +339,7 @@ main{
 #footer p {
     color: #FFF5E6;
     font-size: 15px;
-    padding-block: 10px 30px;
+    padding-block: var(--space-8) var(--space-24);
 }
 
 .wrapper {
@@ -281,12 +351,12 @@ main{
 .footer-list li {
     border-bottom: 1px solid #FFF5E6;
     font-size: 12px;
-    padding-block: 8px
+    padding-block: var(--space-8);
 }
 
 .copy {
     text-align: center;
-    padding-block: 16px;
+    padding-block: var(--space-16);
 }
 
 /* フッター */
@@ -305,12 +375,12 @@ main{
     text-align: left;
     color: #FFF5E6;
     display: flex;
-    gap: 1rem;
+    gap: var(--space-16);
     flex-direction: column;
 }
 
 .mv-title {
-    font-family: "Impact", sans-serif;
+    font-family: "Anton", "Impact", sans-serif;
     font-size: 80px;
     line-height: 100%;
 }
@@ -324,24 +394,28 @@ main{
 .item-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding-inline: 20px;
-    padding-top: 12px;
+    gap: var(--space-24);
+    padding-inline: var(--space-24);
+    padding-top: var(--space-24);
 }
 
 .item-card {
     cursor: pointer;
 }
 
+.item-card p {
+    margin-top: var(--space-8);
+}
+
 .item-modal-overlay {
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 100;
+    z-index: 1100; /* ヘッダー(1000)より前に出す */
     background: rgba(20, 10, 8, 0.68);
     align-items: center;
     justify-content: center;
-    padding: 24px;
+    padding: var(--space-24);
 }
 
 .item-modal-box {
@@ -350,7 +424,7 @@ main{
     border-radius: 14px;
     max-width: 420px;
     width: 100%;
-    padding: 26px;
+    padding: var(--space-24);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -358,19 +432,19 @@ main{
 
 .item-modal-close {
     position: absolute;
-    top: 14px;
-    right: 14px;
+    top: var(--space-16);
+    right: var(--space-16);
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1px solid rgba(43, 27, 22, 0.14);
+    border: 1px solid rgba(255, 245, 230, 0.5);
     background: none;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 15px;
     cursor: pointer;
-    color: #2B1B16;
+    color: #FFF5E6;
 }
 
 .item-modal-photo {
@@ -405,10 +479,224 @@ main{
 }
 
 .item-modal-info {
-    margin-top: 16px;
+    margin-top: var(--space-16);
     text-align: center;
 }
 
 .item-modal-desc {
     color: #F2EBDC;
+}
+
+/* ====================
+   Tablet：768px以上
+==================== */
+@media (min-width: 768px) {
+    #header,
+    #footer {
+        padding-inline: var(--pad-inline);
+    }
+
+    .title-box,
+    .text-box,
+    .item-list,
+    .sns-img,
+    .accordion,
+    .red-box-title {
+        padding-inline: var(--pad-inline);
+    }
+
+    .item-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: var(--space-40);
+    }
+}
+
+/* ====================
+   PC：1024px以上
+==================== */
+@media (min-width: 1024px) {
+
+    /* ヘッダー */
+    .menu-button,
+    .drawer,
+    .drawer-scrim {
+        display: none;
+    }
+
+    #header {
+        justify-content: flex-start;
+        padding-inline: var(--pad-inline);
+    }
+
+    .gnav {
+        display: block;
+        margin-left: auto;
+    }
+
+    .gnav-list {
+        display: flex;
+        gap: clamp(var(--space-16), 2.2vw, var(--space-40));
+    }
+
+    .gnav a {
+        display: block;
+        position: relative;
+        transition: color .25s;
+    }
+
+    .gnav-ja {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: .06em;
+        line-height: 1;
+    }
+
+    .gnav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: calc(var(--space-8) * -1);
+        height: 2px;
+        background: #D4A23E;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .25s;
+    }
+
+    .gnav a:hover,
+    .gnav a[aria-current="page"] {
+        color: #D4A23E;
+    }
+
+    .gnav a:hover::after,
+    .gnav a[aria-current="page"]::after {
+        transform: scaleX(1);
+    }
+
+    .phone {
+        margin-left: var(--space-40);
+        width: 24px;
+    }
+
+    /* タイポ */
+    h2 {
+        font-size: clamp(80px, 8vw, 120px);
+    }
+
+    .sub-title {
+        font-size: 28px;
+    }
+
+    p {
+        line-height: 1.9;
+    }
+
+    .cta-text {
+        font-size: 14px;
+    }
+
+    /* AboutとItemのmv */
+    .mv img {
+        width: 100%;
+        height: clamp(360px, 45vw, 560px);
+        object-fit: cover;
+    }
+
+    .mv .title-box {
+        padding-inline: var(--pad-inline);
+    }
+
+    .mv-title {
+        font-size: clamp(80px, 9vw, 128px);
+    }
+
+    .title-box-text {
+        max-width: 40em;
+    }
+
+    /* 商品カード */
+    .item-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .item-card li {
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    .item-modal-box {
+        max-width: 640px;
+    }
+
+    .item-modal-nav.prev {
+        left: calc(-1 * (38px + var(--space-16)));
+    }
+
+    .item-modal-nav.next {
+        right: calc(-1 * (38px + var(--space-16)));
+    }
+
+    /* フッター */
+    #footer {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: var(--space-64);
+        padding: var(--space-64) var(--pad-inline) 0;
+    }
+
+    #footer .wrapper {
+        justify-content: flex-start;
+        gap: var(--space-24);
+        align-self: start;
+    }
+
+    .footer-list {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: var(--space-40);
+    }
+
+    #footer .copy {
+        grid-column: 1 / -1;
+        margin-top: var(--space-64);
+        padding-block: var(--space-24);
+        border-top: 1px solid rgba(255, 245, 230, .3);
+        font-size: 12px;
+    }
+
+    :focus-visible {
+        outline: 2px solid #D4A23E;
+        outline-offset: 3px;
+    }
+}
+
+/* PC：ホバーできる端末だけ */
+@media (min-width: 1024px) and (hover: hover) {
+    .map {
+        transition: transform .15s, box-shadow .15s;
+    }
+
+    .map:hover {
+        transform: translateY(3px);
+        box-shadow: 0 2px 0 rgba(121, 92, 34, 1);
+    }
+
+    .item-card img,
+    .sns-img img {
+        transition: transform .4s ease;
+    }
+
+    .item-card:hover img,
+    .sns-img img:hover {
+        transform: scale(1.04);
+    }
+
+    .acc-question:hover {
+        background: rgba(255, 245, 230, .08);
+    }
 }

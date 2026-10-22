@@ -4,12 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>古着屋フリッパーズ｜宮城県登米市の古着屋（土日祝営業）</title>
+    <meta name="description" content="宮城県登米市米山町の古着屋フリッパーズ。牛舎を改装した2階建ての店舗に、USビンテージ・アウトドア・ラルフローレンなどの古着が並びます。土日祝 9:00〜17:00営業、駐車場あり。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="古着屋フリッパーズ">
+    <meta property="og:title" content="古着屋フリッパーズ｜宮城県登米市の古着屋（土日祝営業）">
+    <meta property="og:description" content="宮城県登米市米山町の古着屋フリッパーズ。牛舎を改装した2階建ての店舗に、USビンテージ・アウトドア・ラルフローレンなどの古着が並びます。土日祝 9:00〜17:00営業、駐車場あり。">
+    <meta property="og:image" content="images/access.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap">
+    <link rel="icon" href="images/logo.png">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
-    <script src="java.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./common.css">
+    <script src="java.js?v=4" defer></script>
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="./common.css?v=4">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 </head>
 
@@ -35,9 +45,10 @@
                 <a href="./index.html"><img img src="images/logo.png" class="logo" alt="FLIPPERS"></a>
             </div>
             <ul>
-                <li class="menu-button-list"> <a href="./index.html#about">フリッパーズについて</a></li>
-                <li class="menu-button-list"><a href="./index.html#message">店主の思い</a></li>
-                <li class="menu-button-list"><a href="./index.html#item">商品紹介</a></li>
+                <li class="menu-button-list"><a href="./index.html#about">フリッパーズについて</a></li>
+                <li class="menu-button-list"><a href="./index.html#message">店主の想い</a></li>
+                <li class="menu-button-list"><a href="./About.html">店内紹介</a></li>
+                <li class="menu-button-list"><a href="./item.html">商品一覧</a></li>
                 <li class="menu-button-list"><a href="./index.html#access">アクセス</a></li>
                 <li class="menu-button-list"><a href="./index.html#question">よくあるご質問</a></li>
             </ul>
@@ -49,7 +60,17 @@
         <h1>
             <a href="./index.html"><img img src="./images/logo.png" class="logo" alt="FLIPPERS"></a>
         </h1>
-        <img img src="images/phone.png" class="phone" alt="phone">
+        <nav class="gnav" aria-label="グローバルナビ">
+            <ul class="gnav-list">
+                <li><a href="./index.html#about"><span class="gnav-ja">フリッパーズについて</span></a></li>
+                <li><a href="./index.html#message"><span class="gnav-ja">店主の想い</span></a></li>
+                <li><a href="./About.html"><span class="gnav-ja">店内紹介</span></a></li>
+                <li><a href="./item.html"><span class="gnav-ja">商品一覧</span></a></li>
+                <li><a href="./index.html#access"><span class="gnav-ja">アクセス</span></a></li>
+                <li><a href="./index.html#question"><span class="gnav-ja">よくあるご質問</span></a></li>
+            </ul>
+        </nav>
+        <a href="tel:00000000000" class="phone-link" aria-label="電話をかける（000-0000-0000）"><img src="images/phone.png" class="phone" alt=""></a>
 
     </header>
     <!-- ヘッダー -->
@@ -75,12 +96,12 @@
         <!-- main -->
 
         <!-- フリッパーズについて -->
-        <section class="box">
+        <section class="box box--about">
             <div class="title-box">
                 <h2 class="title" id="about">About</h2>
                 <h3 class="sub-title">フリッパーズについて</h3>
             </div>
-            <img img src="images//About.jpeg" class="about1" alt="about最初の写真">
+            <img loading="lazy" img src="images//About.jpeg" class="about1" alt="about最初の写真">
             <div class="text-box">
                 <p class=>宮城県登米市にある古着屋『flippers/フリッパーズ』です。
                     <br>自宅敷地内の牛舎を改装した店舗にて土日祝日のみ営業しております。
@@ -94,27 +115,27 @@
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img img src="images//access.jpeg" alt="about1">
+                            <img loading="lazy" img src="images//access.jpeg" alt="about1">
                             <h4 class="about-title">01 店内外観</h4>
                             <p>２階建ての改装した牛舎とアメリカンなオブジェ達が出迎えます。</p>
                         </div>
                         <div class="swiper-slide">
-                            <img img src="images//About2.jpeg" alt="About2">
+                            <img loading="lazy" img src="images//About2.jpeg" alt="About2">
                             <h4 class="about-title">02 別棟</h4>
                             <p>牛舎の隣の別棟では、掘り出し物が見つかるかも。</p>
                         </div>
                         <div class="swiper-slide">
-                            <img img src="images//About3.jpeg" alt="About3">
+                            <img loading="lazy" img src="images//About3.jpeg" alt="About3">
                             <h4 class="about-title">03 1階（牛舎）</h4>
                             <p>店主が長年集めてきたラルフローレンの数々。</p>
                         </div>
                         <div class="swiper-slide">
-                            <img img src="images//shoptour.top.jpg" alt="About4">
+                            <img loading="lazy" img src="images//shoptour.top.jpg" alt="About4">
                             <h4 class="about-title">04 階段</h4>
                             <p>牛舎だった名残の階段を上がると、2階の景色が少しずつ見えてきます。</p>
                         </div>
                         <div class="swiper-slide">
-                            <img img src="images//About5.jpg" alt="About5">
+                            <img loading="lazy" img src="images//About5.jpg" alt="About5">
                             <h4 class="about-title">05 2階（牛舎）</h4>
                             <p>目の前に広がるのは、店主が選び抜いた一点物たちの景色です。</p>
                         </div>
@@ -142,36 +163,38 @@
                 <h2 class="title" id="message">Message</h2>
                 <h3 class="sub-title">店主の想い </h3>
             </div>
-            <div class="profile">
-                <img img src="images//iwabutisan.jpg" class="profile-img" alt="岩渕さん">
-                <p>店主
-                    <br>○○○○
-                </p>
-            </div>
-            <div class="text-box">
-                <div class="message-box">
-                    <h4>Message1</h4>
-                    <p class="important">1点ずつ、
-                        <br>直接見て
-                        <br>セレクトしています。
-                    </p>
-                    <p>
-                        ベール仕入れではなく、一着一着を店主自身の目で確かめ、思いを込めて選んでいます。
+            <div class="message-inner">
+                <div class="profile">
+                    <img loading="lazy" img src="images//iwabutisan.jpg" class="profile-img" alt="岩渕さん">
+                    <p>店主
+                        <br>○○○○
                     </p>
                 </div>
-                <div class="message-box">
-                    <h4>Message2</h4>
-                    <p class="important">服も、
-                        <br>人も、
-                        <br>ご縁を大切に。
-                    </p>
-                    <p>
-                        古着との出会い、お客様との出会い、人と人との繋がりを大切にするお店を目指しています。
-                    </p>
+                <div class="text-box">
+                    <div class="message-box">
+                        <h4>Message1</h4>
+                        <p class="important">1点ずつ、
+                            <br>直接見て
+                            <br>セレクトしています。
+                        </p>
+                        <p>
+                            ベール仕入れではなく、一着一着を店主自身の目で確かめ、思いを込めて選んでいます。
+                        </p>
+                    </div>
+                    <div class="message-box">
+                        <h4>Message2</h4>
+                        <p class="important">服も、
+                            <br>人も、
+                            <br>ご縁を大切に。
+                        </p>
+                        <p>
+                            古着との出会い、お客様との出会い、人と人との繋がりを大切にするお店を目指しています。
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="img-wrap">
-                <img img src="images//message.jpae.jpg" class="img-wrap-img" alt="message">
+                <img loading="lazy" img src="images//message.jpae.jpg" class="img-wrap-img" alt="message">
                 <p class="img-wrap-text"><span class="important">「これ、いいですね」</span>
                     <br>から始まる会話が、この店では毎週末繰り返されています。
                 </p>
@@ -181,19 +204,19 @@
 
 
         <!-- SNS -->
-        <section class="box">
+        <section class="box box--sns">
             <div class="title-box">
                 <h2 class="title" id="sns">SNS</h2>
                 <h3 class="sub-title">Instagram</h3>
             </div>
             <div class="sns-img">
-                <img img src="images//Instagram1.png" alt="インスタ1">
-                <img img src="images//Instagram2.PNG" alt="インスタ2">
-                <img img src="images//Instagram 3.PNG" alt="インスタ3">
+                <img loading="lazy" src="images/shoptour.vintage.jpeg" alt="ビンテージコーナーの棚">
+                <img loading="lazy" src="images/shoptour.outdor.jpeg" alt="アウトドアウェアのコーナー">
+                <img loading="lazy" src="images/shoptour.amekaji.jpeg" alt="アメカジのコーナー">
             </div>
             <div class="cta-box">
-                <p class="cta-text">入荷情報やイベント情報を、
-                    <br>来店前にチェック
+                <p class="cta-text">最新の入荷情報・臨時休業のお知らせは
+                    <br>Instagramで発信しています
                 </p>
                 <div class="cta-btn">
                     <a href="https://www.instagram.com/flippers.2013?igsi=MXhiY3dkOThjYTZrcA%3D%3D&utm_source=qr">@flippers.2013
@@ -204,33 +227,34 @@
 
         <!-- SNS -->
         <!-- 商品紹介 -->
-        <section class="box">
+        <section class="box box--item">
             <div class="title-box">
                 <h2 class="title" id="item">Item</h2>
                 <h3 class="sub-title">商品紹介</h3>
             </div>
             <div class="text-box">
                 <p>オンライン販売は行っておりません。
-                    <br>ここでご紹介するのは、店頭に並んでいる商品のほんの一部です。
+                    <br>ここでご紹介するのは、店頭に並んでいる商品のほんの一例です。
+                    <br>一点物のため、売り切れている場合があります。
                     <br>実物はぜひ店内でお確かめください。
                 </p>
             </div>
             <ul class="item-list">
                 <div class="item-card js-item">
-                    <li><img img src="images//item1.jpeg" class="item" alt="商品1"></li>
+                    <li><img loading="lazy" img src="images//item1.jpeg" class="item" alt="商品1"></li>
                     <p>RalphLauren/ニット</p>
                 </div>
                 <div class="item-card js-item">
-                    <li><img img src="images//item2.jpeg" class="item" alt="商品2"></li>
+                    <li><img loading="lazy" img src="images//item2.jpeg" class="item" alt="商品2"></li>
                     <p>RalphLauren/ハーフパンツ</p>
                 </div>
                 <div class="item-card js-item">
-                    <li><img img src="images//item3.jpeg" class="item" alt="商品3"></li>
+                    <li><img loading="lazy" img src="images//item3.jpeg" class="item" alt="商品3"></li>
                     <p>Patagonia/フリースベスト</p>
                 </div>
 
                 <div class="item-card js-item">
-                    <li><img img src="images//item4.jpeg" class="item" alt="商品4"></li>
+                    <li><img loading="lazy" img src="images//item4.jpeg" class="item" alt="商品4"></li>
                     <p>Carhartt/アクティブジャケット</p>
                 </div>
             </ul>
@@ -269,7 +293,7 @@
                 <h2 class="title" id="access">ACCESS</h2>
                 <h3 class="sub-title">アクセス </h3>
             </div>
-            <img img src="images//access.jpeg" class="access-img" alt="アクセス">
+            <img loading="lazy" img src="images//access.jpeg" class="access-img" alt="アクセス">
             <div class="text-box">
                 <p>住所</p>
                 <p class="highlight">〒987-0304
@@ -291,6 +315,35 @@
                 <p class="highlight"> 土日祝日09:00～17:00（平日休み）
                 </p>
             </div>
+
+            <!-- 初めての方へ -->
+            <div class="first-visit" id="first-visit">
+                <h3 class="first-visit-title">初めての方へ</h3>
+                <ul class="first-visit-list">
+                    <li>
+                        <span class="first-visit-label">駐車場</span>
+                        <span class="first-visit-value">店舗前に10台</span>
+                    </li>
+                    <li>
+                        <span class="first-visit-label">お支払い</span>
+                        <span class="first-visit-value">現金のみ</span>
+                    </li>
+                    <li>
+                        <span class="first-visit-label">試着</span>
+                        <span class="first-visit-value">OK</span>
+                    </li>
+                    <li>
+                        <span class="first-visit-label">価格帯</span>
+                        <span class="first-visit-value">500円〜</span>
+                    </li>
+                    <li>
+                        <span class="first-visit-label">営業日</span>
+                        <span class="first-visit-value">土日祝 9:00〜17:00</span>
+                    </li>
+                </ul>
+                <p class="first-visit-note">お問い合わせ：<a href="tel:00000000000">000-0000-0000</a></p>
+            </div>
+            <!-- 初めての方へ -->
         </div>
         <!-- アクセス -->
 
@@ -337,7 +390,7 @@
                     </button>
                     <div class="acc-body">
                         <div class="acc-inner">
-                            <p>平日はお休みです。営業日は土日祝日となっています、営業日については、Instagramでお知らせすることが多いため、ご確認ください。</p>
+                            <p>平日はお休みです。営業日は土日祝日です。臨時休業などは、Instagramでお知らせすることが多いため、ご確認ください。</p>
                         </div>
                     </div>
                 </li>
@@ -381,11 +434,12 @@
         <nav>
             <ul class="footer-list">
                 <li><a href="./index.html#about">フリッパーズについて</a></li>
+                <li><a href="./index.html#message">店主の想い</a></li>
+                <li><a href="./About.html">店内紹介</a></li>
                 <li><a href="./item.html">商品一覧</a></li>
                 <li><a href="./index.html#access">アクセス</a></li>
                 <li><a href="./index.html#question">よくあるご質問</a></li>
-                <li><a href="#">お問い合わせ</a></li>
-                <li><a href="#">特定商取引法に基づく表示</a></li>
+                <li><a href="tel:00000000000">お問い合わせ（電話）</a></li>
             </ul>
         </nav>
         <p class="copy">&copy;古着屋フリッパーズ</p>

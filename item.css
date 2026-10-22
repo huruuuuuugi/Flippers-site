@@ -4,12 +4,16 @@ body {
 }
 
 label {
-    padding-inline: 20px;
+    display: block;
+    padding-top: var(--space-64);
+    padding-bottom: var(--space-8);
+    padding-inline: var(--space-24);
 }
 
 .genre {
-    width: 100%;
-    padding: 15px 20px;
+    width: calc(100% - var(--space-24) * 2);
+    margin-inline: var(--space-24);
+    padding: var(--space-16);
     font-weight: bold;
 }
 
@@ -25,7 +29,7 @@ label {
     align-items: center;
     border-radius: 64px;
     justify-content: center;
-    padding: 12px
+    padding: var(--space-16)
 }
 
 .cta-box {
@@ -37,32 +41,90 @@ label {
 
 .cta-text {
     position: relative;
+    display: inline-block;
+    padding-inline: var(--space-24);
 }
 
-.cta-text::before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 20px;
-    background-color: #FFF5E6;
-    left: 24%;
-    top: 8%;
-    transform: rotate(-25deg);
-}
-
-/* 右の棒 */
-
+/* 文字の幅に合わせて棒を置く（文言が変わっても重ならない） */
+.cta-text::before,
 .cta-text::after {
     content: "";
     position: absolute;
+    top: 50%;
     width: 2px;
-    height: 20px;
+    height: 37px;
     background-color: #FFF5E6;
-    right: 24%;
-    top: 8%;
-    transform: rotate(25deg);
+}
+
+.cta-text::before {
+    left: var(--space-4);
+    transform: translateY(-50%) rotate(-25deg);
+}
+
+.cta-text::after {
+    right: var(--space-4);
+    transform: translateY(-50%) rotate(25deg);
 }
 
 .cta-box {
-    padding-block: 64px;
+    padding-block: var(--space-64);
+}
+
+
+/* ====================
+   Tablet：768px以上
+==================== */
+@media (min-width: 768px) {
+    .item-filter {
+        padding-inline: var(--pad-inline);
+    }
+
+    label {
+        padding-inline: 0;
+    }
+
+    .genre {
+        width: 100%;
+        margin-inline: 0;
+    }
+}
+
+/* ====================
+   PC：1024px以上
+==================== */
+@media (min-width: 1024px) {
+    .item-filter {
+        display: flex;
+        align-items: center;
+        gap: var(--space-16);
+        padding: var(--section-y) var(--pad-inline) 0;
+    }
+
+    label {
+        padding: 0;
+    }
+
+    .genre {
+        width: 280px;
+        margin: 0;
+        border-radius: 8px;
+        min-height: 44px;
+    }
+
+    .item-list {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-40) var(--space-24);
+        padding-inline: var(--pad-inline);
+        padding-top: var(--space-40);
+    }
+
+    .item-card img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+    }
+
+    .cta-box {
+        padding-block: var(--section-y);
+    }
 }

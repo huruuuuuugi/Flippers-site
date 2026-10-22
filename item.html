@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>商品紹介｜古着屋フリッパーズ（宮城県登米市）</title>
+    <meta name="description" content="古着屋フリッパーズの店頭に並ぶ商品の一例。ラルフローレン・Patagonia・Carharttなど。オンライン販売はしていないので、実物はぜひ店頭で。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="古着屋フリッパーズ">
+    <meta property="og:title" content="商品紹介｜古着屋フリッパーズ（宮城県登米市）">
+    <meta property="og:description" content="古着屋フリッパーズの店頭に並ぶ商品の一例。ラルフローレン・Patagonia・Carharttなど。オンライン販売はしていないので、実物はぜひ店頭で。">
+    <meta property="og:image" content="images/item-mv.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap">
+    <link rel="icon" href="images/logo.png">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./java.js" defer></script>
-    <link rel="stylesheet" href="./common.css">
-    <link rel="stylesheet" href="./item.css">
+    <script src="./java.js?v=4" defer></script>
+    <link rel="stylesheet" href="./common.css?v=4">
+    <link rel="stylesheet" href="./item.css?v=4">
 </head>
 
 <body>
@@ -34,9 +44,10 @@
                 <a href="./index.html"><img src="images/logo.png" class="logo" alt="FLIPPERS"></a>
             </div>
             <ul>
-                <li class="menu-button-list"> <a href="./index.html#about">フリッパーズについて</a></li>
-                <li class="menu-button-list"><a href="./index.html#message">店主の思い</a></li>
-                <li class="menu-button-list"><a href="./index.html#item">商品紹介</a></li>
+                <li class="menu-button-list"><a href="./index.html#about">フリッパーズについて</a></li>
+                <li class="menu-button-list"><a href="./index.html#message">店主の想い</a></li>
+                <li class="menu-button-list"><a href="./About.html">店内紹介</a></li>
+                <li class="menu-button-list"><a href="./item.html">商品一覧</a></li>
                 <li class="menu-button-list"><a href="./index.html#access">アクセス</a></li>
                 <li class="menu-button-list"><a href="./index.html#question">よくあるご質問</a></li>
             </ul>
@@ -47,7 +58,17 @@
         <h1>
             <a href="./index.html"><img src="images/logo.png" class="logo" alt="FLIPPERS"></a>
         </h1>
-        <img src="images/phone.png" class="phone" alt="phone">
+        <nav class="gnav" aria-label="グローバルナビ">
+            <ul class="gnav-list">
+                <li><a href="./index.html#about"><span class="gnav-ja">フリッパーズについて</span></a></li>
+                <li><a href="./index.html#message"><span class="gnav-ja">店主の想い</span></a></li>
+                <li><a href="./About.html"><span class="gnav-ja">店内紹介</span></a></li>
+                <li><a href="./item.html" aria-current="page"><span class="gnav-ja">商品一覧</span></a></li>
+                <li><a href="./index.html#access"><span class="gnav-ja">アクセス</span></a></li>
+                <li><a href="./index.html#question"><span class="gnav-ja">よくあるご質問</span></a></li>
+            </ul>
+        </nav>
+        <a href="tel:00000000000" class="phone-link" aria-label="電話をかける（000-0000-0000）"><img src="images/phone.png" class="phone" alt=""></a>
     </header>
     <!-- ヘッダー -->
 
@@ -58,75 +79,77 @@
                 <h2 class="mv-title">Item
                 </h2>
                 <h3 class="sub-title">商品紹介</h3>
-                <p class="title-box-text">店主がこだわりを持って選んだ商品の一部です。
+                <p class="title-box-text">店主がこだわりを持って選んだ商品の一例です。<br>一点物のため、掲載品が売り切れている場合があります。
                 </p>
             </div>
         </section>
 
-        <label for="genre">ジャンル</label>
-        <select name="genre" id="genre" class="genre">
-            <option value="">ジャンルを選択</option>
-            <option value="outer">アウター</option>
-            <option value="tops">トップス</option>
-            <option value="pants">パンツ</option>
-            <option value="bags">バック</option>
-            <option value="shoes">靴</option>
-        </select>
+        <div class="item-filter">
+            <label for="genre">ジャンル</label>
+            <select name="genre" id="genre" class="genre">
+                <option value="">ジャンルを選択</option>
+                <option value="outer">アウター</option>
+                <option value="tops">トップス</option>
+                <option value="pants">パンツ</option>
+                <option value="bags">バッグ</option>
+                <option value="shoes">靴</option>
+            </select>
+        </div>
 
         <ul class="item-list  item-list">
             <div class="item-card js-item" data-genre="tops">
-                <li><img src="images/item1.jpeg" class="item" alt="ラルフニット"></li>
+                <li><img loading="lazy" src="images/item1.jpeg" class="item" alt="ラルフニット"></li>
                 <p>RalphLauren/ニット</p>
             </div>
             <div class="item-card js-item" data-genre="pants">
-                <li><img src="images/item2.jpeg" class="item" alt="ラルフハーフパンツ"></li>
+                <li><img loading="lazy" src="images/item2.jpeg" class="item" alt="ラルフハーフパンツ"></li>
                 <p>RalphLauren/ハーフパンツ</p>
             </div>
             <div class="item-card js-item" data-genre="outer">
-                <li><img src="images/item3.jpeg" class="item" alt="パタゴニアベスト"></li>
+                <li><img loading="lazy" src="images/item3.jpeg" class="item" alt="パタゴニアベスト"></li>
                 <p>Patagonia/フリースベスト</p>
             </div>
 
             <div class="item-card js-item" data-genre="outer">
-                <li><img src="images/item4.jpeg" class="item" alt="カーハートジャケット"></li>
+                <li><img loading="lazy" src="images/item4.jpeg" class="item" alt="カーハートジャケット"></li>
                 <p>Carhartt/アクティブジャケット</p>
             </div>
 
             <div class="item-card js-item" data-genre="shoes">
-                <li><img src="images/item5.jpeg" class="item" alt="ダナー"></li>
+                <li><img loading="lazy" src="images/item5.jpeg" class="item" alt="ダナー"></li>
                 <p>Danner/ブーツ</p>
             </div>
             <div class="item-card js-item" data-genre="outer">
-                <li><img src="images/item6.jpeg" class="item" alt="シェラデザイン"></li>
+                <li><img loading="lazy" src="images/item6.jpeg" class="item" alt="シェラデザイン"></li>
                 <p>シェラデザイン/マウンテンパーカー</p>
             </div>
             <div class="item-card js-item" data-genre="tops">
-                <li><img src="images/item7.jpeg" class="item" alt="usa製T"></li>
+                <li><img loading="lazy" src="images/item7.jpeg" class="item" alt="usa製T"></li>
                 <p>usa製/Tシャツ</p>
             </div>
             <div class="item-card js-item" data-genre="tops">
-                <li><img src="images/item8.jpeg" class="item" alt="VANSON"></li>
+                <li><img loading="lazy" src="images/item8.jpeg" class="item" alt="VANSON"></li>
                 <p>VANSON/Tシャツ</p>
             </div>
             <div class="item-card js-item" data-genre="tops">
-                <li><img src="images/item9.jpeg" class="item" alt="Chanmpion"></li>
-                <p>Chanmpion/ベースボールシャツ</p>
+                <li><img loading="lazy" src="images/item9.jpeg" class="item" alt="Champion"></li>
+                <p>Champion/ベースボールシャツ</p>
             </div>
             <div class="item-card js-item" data-genre="outer">
-                <li><img src="images/item10.jpeg" class="item" alt="Mocoys"></li>
+                <li><img loading="lazy" src="images/item10.jpeg" class="item" alt="Mocoys"></li>
                 <p>REALMocoYs/レザージャケット</p>
             </div>
             <div class="item-card js-item" data-genre="outer">
-                <li><img src="images/item11.jpeg" class="item" alt="ノースフェイス"></li>
+                <li><img loading="lazy" src="images/item11.jpeg" class="item" alt="ノースフェイス"></li>
                 <p>THENORTHFACE/ダウンジャケット</p>
             </div>
             <div class="item-card js-item" data-genre="shoes">
-                <li><img src="images/item12.jpeg" class="item" alt="adidas"></li>
+                <li><img loading="lazy" src="images/item12.jpeg" class="item" alt="adidas"></li>
                 <p>adidas/26cm</p>
             </div>
             <div class="item-card js-item" data-genre="bags">
-                <li><img src="images/item13.jpeg" class="item" alt="パタゴニアバック"></li>
-                <p>Patagonia/ショルダーバック</p>
+                <li><img loading="lazy" src="images/item13.jpeg" class="item" alt="パタゴニアのショルダーバッグ"></li>
+                <p>Patagonia/ショルダーバッグ</p>
             </div>
         </ul>
 
@@ -147,10 +170,10 @@
         </div>
 
         <div class="cta-box">
-            <p class="cta-text">商品についてのご質問はこちら</p>
+            <p class="cta-text">商品についてのご質問はこちら<br>000-0000-0000（土日祝 9:00〜17:00）</p>
             <div class="cta-btn">
-                <a href="#" class="cta-btn-phone">お問い合わせ
-                    <img src="images/phone.png" class="cta-btn-icon" alt="phone">
+                <a href="tel:00000000000" class="cta-btn-phone">お電話でお問い合わせ
+                    <img src="images/phone.png" class="cta-btn-icon" alt="">
                 </a>
             </div>
         </div>
@@ -166,11 +189,12 @@
         <nav>
             <ul class="footer-list">
                 <li><a href="./index.html#about">フリッパーズについて</a></li>
+                <li><a href="./index.html#message">店主の想い</a></li>
+                <li><a href="./About.html">店内紹介</a></li>
                 <li><a href="./item.html">商品一覧</a></li>
                 <li><a href="./index.html#access">アクセス</a></li>
                 <li><a href="./index.html#question">よくあるご質問</a></li>
-                <li><a href="#">お問い合わせ</a></li>
-                <li><a href="#">特定商取引法に基づく表示</a></li>
+                <li><a href="tel:00000000000">お問い合わせ（電話）</a></li>
             </ul>
         </nav>
         <p class="copy">&copy;古着屋フリッパーズ</p>

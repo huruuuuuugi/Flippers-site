@@ -1,3 +1,13 @@
+/* マップ（PCサイドバー・スマホモーダル共通）で使う色。モーダルはスマホでも使うので :root で定義する */
+:root {
+    --maroon: #622E2E;
+    --cream: #FFF5E6;
+    --cream-deep: #F5E6CC;
+    --line: rgba(98, 46, 46, .35);
+    --ink-soft: #622E2E;
+    --serif-en: "Anton", Impact, sans-serif;
+}
+
 @charset "UTF-8";
 
 * {
@@ -42,76 +52,81 @@ p {
 /* mv */
 
 .img-flex {
+    margin-top: var(--space-16);
     display: flex;
-    gap: 10px;
+    gap: var(--space-8);
 }
 
 .img-flex img {
-    width: calc(50% - 5px);
+    width: calc(50% - var(--space-8) / 2);
 }
 
 
 /* メイン */
 
 .shop-box {
-    padding-top: 64px;
-    padding-inline: 20px;
+    padding-top: var(--space-64);
+    padding-inline: var(--space-24);
 }
 
-.shop-box p {
-    padding-top: 0.5rem;
+.img-flex ~ p {
+    padding-top: var(--space-16);
+}
+
+.img-flex + p {
+    padding-top: var(--space-24);
 }
 
 .sec-number {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: var(--space-8);
 }
 
-.wrapper {
+/* フッターの .wrapper と衝突しないよう番号ラベルに限定 */
+.sec-number .wrapper {
     color: #622E2E;
     display: inline-block;
-    padding-inline: 6px;
+    padding-inline: var(--space-8);
     font-size: 13px;
 }
 
 /* 左の棒 */
 .cta-text {
     position: relative;
+    display: inline-block;
+    padding-inline: var(--space-24);
 }
 
-.cta-text::before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 35px;
-    background-color: #FFF5E6;
-    left: 23%;
-    bottom: 12%;
-    transform: rotate(-25deg);
-}
-
-/* 右の棒 */
-
+/* 文字の幅に合わせて棒を置く（文言が変わっても重ならない） */
+.cta-text::before,
 .cta-text::after {
     content: "";
     position: absolute;
+    top: 50%;
     width: 2px;
     height: 35px;
     background-color: #FFF5E6;
-    right: 23%;
-    bottom: 12%;
-    transform: rotate(25deg);
+}
+
+.cta-text::before {
+    left: var(--space-4);
+    transform: translateY(-50%) rotate(-25deg);
+}
+
+.cta-text::after {
+    right: var(--space-4);
+    transform: translateY(-50%) rotate(25deg);
 }
 
 .about-cta-box {
     text-align: center;
-    padding-block: 64px;
+    padding-block: var(--space-64);
 
 }
 
 .about-cta-btn {
-    padding-bottom: 32px;
+    padding-bottom: var(--space-24);
     text-align: center;
     display: inline-block;
 }
@@ -131,8 +146,8 @@ p {
     display: flex;
     /* ← スマホでは最初から表示 */
     position: fixed;
-    right: 18px;
-    bottom: 18px;
+    right: var(--space-16);
+    bottom: var(--space-16);
     z-index: 70;
     width: 58px;
     height: 58px;
@@ -142,7 +157,7 @@ p {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 2px;
+    gap: var(--space-4);
     font-size: 10px;
     letter-spacing: .03em;
     box-shadow: 0 6px 18px rgba(20, 10, 8, 0.32);
@@ -160,14 +175,14 @@ p {
     font-size: 15px;
     color: var(--maroon);
     letter-spacing: .05em;
-    margin-bottom: 18px;
+    margin-bottom: var(--space-16);
 }
 
 .fm-wrap {
-    margin-bottom: 20px;
+    margin-bottom: var(--space-24);
     background-color: #FFF5E6;
-    padding-block: 24px;
-    padding-inline: 42px 18px;
+    padding-block: var(--space-24);
+    padding-inline: var(--space-40) var(--space-16);
 }
 
 /* マップの線 */
@@ -223,14 +238,14 @@ p {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: var(--space-4);
 }
 
 .fm-nav li a {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px;
+    gap: var(--space-8);
+    padding: var(--space-8);
     border-radius: 8px;
     font-size: 13px;
     color: var(--ink-soft);
@@ -271,7 +286,7 @@ p {
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 100;
+    z-index: 1100; /* ヘッダー(1000)より前に出す */
     background: rgba(20, 10, 8, 0.6);
     align-items: flex-end;
     justify-content: center;
@@ -282,7 +297,7 @@ p {
     border-radius: 20px 20px 0 0;
     width: 100%;
     max-width: 480px;
-    padding: 26px 24px 30px;
+    padding: var(--space-24);
     max-height: 82vh;
     overflow-y: auto;
     position: relative;
@@ -290,8 +305,8 @@ p {
 
 .map-modal-close {
     position: absolute;
-    right: 18px;
-    top: 18px;
+    right: var(--space-16);
+    top: var(--space-16);
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -307,17 +322,84 @@ p {
 }
 
 /* ====================
-
-   PC：960px以上
-
+   Tablet：768px以上
 ==================== */
-
-@media (min-width: 961px) {
-    .sidebar {
-        display: block;
+@media (min-width: 768px) {
+    .shop-box {
+        padding-inline: var(--pad-inline);
     }
+}
 
+/* ====================
+   PC：1024px以上
+==================== */
+@media (min-width: 1024px) {
     .map-fab {
         display: none;
+    }
+
+    .shop-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        column-gap: var(--space-64);
+        padding-inline: var(--pad-inline);
+    }
+
+    .shop-content {
+        min-width: 0;
+    }
+
+    /* サイドバーのマップ */
+    .sidebar {
+        display: block;
+        position: sticky;
+        top: calc(var(--header-h) + var(--space-40));
+        align-self: start;
+        margin-top: var(--space-64);
+        background: #FFF5E6;
+        border-radius: 16px;
+        padding: var(--space-24);
+    }
+
+    .sidebar .fm-marker.active circle {
+        fill: #D4A23E;
+        stroke: #D4A23E;
+    }
+
+    .sidebar .fm-nav li a.active {
+        color: #D4A23E;
+    }
+
+    .sidebar .fm-nav li a.active .num {
+        background: #D4A23E;
+        border-color: #D4A23E;
+    }
+
+    /* 各コーナー */
+    .shop-box {
+        padding-inline: 0;
+    }
+
+    .shop-box .sub-title {
+        font-size: 32px;
+    }
+
+    .shop-box p {
+        max-width: 40em;
+    }
+
+    .img-flex {
+        gap: var(--space-16);
+    }
+
+    .img-flex img {
+        width: calc(50% - var(--space-16) / 2);
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .about-cta-box {
+        padding-block: var(--section-y);
     }
 }

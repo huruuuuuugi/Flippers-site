@@ -59,12 +59,34 @@ menuLinks.forEach((link) => {
     link.addEventListener('click', closeMenu);
 });
 
+// ドロワーを開いたままPC幅に広げたら閉じる（body の overflow:hidden が残らないように）
+window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => {
+    if (e.matches && drawer.classList.contains('is-open')) {
+        closeMenu();
+    }
+});
+
 // フリッパーズについてのスライダー
 const swiper = new Swiper('.swiper', {
     slidesPerView: 1.15,
     centeredSlides: true,
     spaceBetween: 16,
     loop: true,
+    // 表示中のスライドに swiper-slide-visible を付ける（PCではみ出したスライドを隠すため）
+    watchSlidesProgress: true,
+
+    // タブレット・PC（スマホは上の設定のまま）
+    breakpoints: {
+        768: {
+            slidesPerView: 2.2,
+            spaceBetween: 24,
+        },
+        // PCは1枚ずつ大きく見せる
+        1024: {
+            slidesPerView: 1,
+            spaceBetween: 64,
+        },
+    },
 
     pagination: {
         el: '.swiper-pagination',
@@ -144,7 +166,8 @@ $(function () {
         $navLinks.removeClass('active');
         $navLinks.filter('[data-corner="' + corner + '"]').addClass('active');
         $markers.removeClass('active');
-        $('#fm2-' + corner).addClass('active');
+        // モーダル・サイドバー両方のマップを点灯
+        $markers.filter('[data-corner="' + corner + '"]').addClass('active');
     }
 
     function updateScrollspy() {
@@ -165,7 +188,7 @@ $(function () {
         e.preventDefault();
         const target = $($(this).attr('href'));
         $('#map-modal-overlay').fadeOut(180);
-        $('html, body').animate({ scrollTop: target.offset().top - 90 }, 500);
+        $('html, body').animate({ scrollTop: target.offset().top - $('#header').outerHeight() }, 500);
     });
 
     $markers.on('click', function () {
@@ -175,7 +198,7 @@ $(function () {
         $('#map-modal-overlay').fadeOut(180);
 
         $('html, body').animate({
-            scrollTop: target.offset().top - 90
+            scrollTop: target.offset().top - $('#header').outerHeight()
         }, 500);
     });
     $('#map-fab-btn').on('click', function () {
@@ -212,11 +235,13 @@ $(function () {
     $(function () {
 
         const $items = $('.js-item');
+        // ライトボックスで送る対象（ジャンルで絞り込み中は表示中の商品だけ）
+        let $slideItems = $items;
         let currentIndex = 0;
 
         // ライトボックスの内容を表示する
         function renderItemModal() {
-            const $item = $items.eq(currentIndex);
+            const $item = $slideItems.eq(currentIndex);
 
             // 商品画像を取得
             const imgSrc = $item.find('img').attr('src');
@@ -233,8 +258,12 @@ $(function () {
         }
 
         $items.on('click', function () {
+            // 表示中の商品だけをスライド対象にする
+            $slideItems = $items.filter(':visible');
             // 何番目の商品か取得
-            currentIndex = $items.index(this);
+            currentIndex = $slideItems.index(this);
+            // 1件だけなら矢印を隠す
+            $('#item-modal-prev, #item-modal-next').toggle($slideItems.length > 1);
             // ライトボックスの内容を更新
             renderItemModal();
             // ライトボックスを表示
@@ -243,14 +272,14 @@ $(function () {
 
         // ← 前の商品
         $('#item-modal-prev').on('click', function () {
-            currentIndex = (currentIndex - 1 + $items.length) % $items.length;
+            currentIndex = (currentIndex - 1 + $slideItems.length) % $slideItems.length;
             renderItemModal();
         });
 
 
         // → 次の商品
         $('#item-modal-next').on('click', function () {
-            currentIndex = (currentIndex + 1) % $items.length;
+            currentIndex = (currentIndex + 1) % $slideItems.length;
             renderItemModal();
         });
 
