@@ -223,7 +223,8 @@ body {
 /* 文字の幅に合わせて棒を置く（文言が変わっても重ならない） */
 .cta-text {
     position: relative;
-    display: inline-block;
+    display: table; /* 幅は文字に合わせつつ、ボタンの上に置く */
+    margin-inline: auto;
     padding-inline: var(--space-24);
 }
 
@@ -597,12 +598,11 @@ font-size: 16px;
     /* ④ SNS */
     .box--sns {
         display: grid;
-        grid-template-columns: 5fr 7fr;
+        grid-template-columns: 1fr;
         grid-template-areas:
-            "title imgs"
-            "cta imgs";
-        column-gap: var(--space-64);
-        align-items: center;
+            "title"
+            "imgs"
+            "cta";
         padding-inline: var(--pad-inline);
     }
 
@@ -617,7 +617,7 @@ font-size: 16px;
 
     .box--sns > .sns-img {
         grid-area: imgs;
-        gap: var(--space-16);
+        gap: var(--space-24);
         padding-inline: 0;
     }
 
@@ -632,12 +632,12 @@ font-size: 16px;
     /* ⑤ 商品紹介 */
     .box--item {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-areas:
-            "title text"
-            "list list"
-            "cta cta";
-        column-gap: var(--space-64);
+            "title"
+            "text"
+            "list"
+            "cta";
         padding-inline: var(--pad-inline);
     }
 
@@ -652,7 +652,6 @@ font-size: 16px;
 
     .box--item > .text-box {
         grid-area: text;
-        align-self: end;
         margin-bottom: var(--space-40);
         padding-inline: 0;
     }
@@ -667,15 +666,15 @@ font-size: 16px;
         grid-area: cta;
     }
 
-    /* ⑥ アクセス */
+    /* ⑥ アクセス：外観写真を大きく → その下に地図（左）と住所・営業時間（右） */
     .red-box {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-areas:
-            "title title"
-            "img info"
-            "first first";
-        column-gap: var(--space-64);
+            "title"
+            "img"
+            "info"
+            "first";
         padding-inline: var(--pad-inline);
     }
 
@@ -692,19 +691,38 @@ font-size: 16px;
         grid-area: img;
         padding-bottom: 0;
         width: 100%;
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 21 / 9;
         object-fit: cover;
         border-radius: 12px;
     }
 
+    /* スマホと同じHTMLのまま、PCでは地図だけ左列に回す */
     .red-box > .text-box {
         grid-area: info;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: min-content;
+        column-gap: var(--space-64);
+        margin-top: var(--space-40);
         padding-inline: 0;
     }
 
-    .red-box iframe {
-        height: 280px;
+    .red-box > .text-box > * {
+        grid-column: 2;
+    }
+
+    .red-box > .text-box > iframe {
+        grid-column: 1;
+        grid-row: 1 / span 6;
+        height: 100%;
+        min-height: 320px;
+        margin-top: 0;
         border-radius: 12px;
+    }
+
+    .red-box > .text-box > .cta-box {
+        text-align: left;
+        padding-top: var(--space-24);
     }
 
     .highlight {

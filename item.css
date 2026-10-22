@@ -41,7 +41,8 @@ label {
 
 .cta-text {
     position: relative;
-    display: inline-block;
+    display: table; /* 幅は文字に合わせつつ、ボタンの上に置く */
+    margin-inline: auto;
     padding-inline: var(--space-24);
 }
 
