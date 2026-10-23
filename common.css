@@ -292,6 +292,11 @@ header{
     display: flex;
 }
 
+/* 「電話でお問い合わせ」の文字はPCだけ出す */
+.phone-text {
+    display: none;
+}
+
 /* PC用グローバルナビ（スマホではハンバーガーを使う） */
 .gnav {
     display: none;
@@ -581,6 +586,7 @@ main{
         font-weight: 700;
         letter-spacing: .06em;
         line-height: 1;
+        white-space: nowrap;
     }
 
     .gnav a::after {
@@ -606,9 +612,25 @@ main{
         transform: scaleX(1);
     }
 
-    .phone {
+    .phone-link {
+        align-items: center;
+        gap: var(--space-8);
         margin-left: var(--space-40);
+        padding: var(--space-8) var(--space-16);
+        border: 1px solid #FFF5E6;
+        border-radius: 50px;
+        white-space: nowrap;
+    }
+
+    .phone {
         width: 24px;
+    }
+
+    .phone-text {
+        display: inline;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1;
     }
 
     /* タイポ */
@@ -696,6 +718,23 @@ main{
         font-size: 12px;
     }
 
+}
+
+/* PC幅が狭いとき（1024〜1199px）：メニューと電話ボタンが1行に収まるよう詰める */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .gnav-list {
+        gap: var(--space-16);
+    }
+
+    .gnav-ja {
+        font-size: 14px;
+        letter-spacing: .02em;
+    }
+
+    .phone-link {
+        margin-left: var(--space-16);
+        padding-inline: var(--space-8) var(--space-16);
+    }
 }
 
 /* PC：ホバーできる端末だけ */
