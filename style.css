@@ -311,19 +311,9 @@ body {
     padding: var(--space-16);
 }
 
-/* 文の長い項目は横いっぱいに */
-.first-visit-list li.is-wide {
-    grid-column: 1 / -1;
-}
-
 /* 文章で伝える案内は、PCでも横いっぱいに */
 .first-visit-list li.is-full {
     grid-column: 1 / -1;
-}
-
-.first-visit-text {
-    font-size: 15px;
-    line-height: 1.7;
 }
 
 .first-visit-label {
@@ -334,6 +324,11 @@ body {
     font-size: 18px;
     font-weight: bold;
     line-height: 1.4;
+}
+
+/* 時間などを途中で改行させない */
+.first-visit-value .nowrap {
+    white-space: nowrap;
 }
 
 .first-visit-note {
@@ -759,13 +754,10 @@ font-size: 16px;
         padding-inline: 0;
     }
 
+    /* ご来店時のご案内を横いっぱいに、その下に4枚を1列で並べる */
     .first-visit-list {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: var(--space-16);
-    }
-
-    .first-visit-list li.is-wide {
-        grid-column: auto;
     }
 
     /* ⑦ Q&A */
