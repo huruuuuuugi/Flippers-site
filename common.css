@@ -715,7 +715,7 @@ main{
     }
 
     .item-card:hover img,
-    .sns-img img:hover {
+    .sns-img a:hover img {
         transform: scale(1.04);
     }
 
