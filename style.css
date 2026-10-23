@@ -316,6 +316,16 @@ body {
     grid-column: 1 / -1;
 }
 
+/* 文章で伝える案内は、PCでも横いっぱいに */
+.first-visit-list li.is-full {
+    grid-column: 1 / -1;
+}
+
+.first-visit-text {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
 .first-visit-label {
     font-size: 12px;
 }
