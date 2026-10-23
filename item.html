@@ -10,16 +10,19 @@
     <meta property="og:site_name" content="古着屋フリッパーズ">
     <meta property="og:title" content="商品紹介｜古着屋フリッパーズ（宮城県登米市）">
     <meta property="og:description" content="古着屋フリッパーズの店頭に並ぶ商品の一例。ラルフローレン・Patagonia・Carharttなど。オンライン販売はしていないので、実物はぜひ店頭で。">
-    <meta property="og:image" content="images/item-mv.jpg">
+    <meta property="og:url" content="https://huruuuuuugi.github.io/Flippers-site/item.html">
+    <meta property="og:image" content="https://huruuuuuugi.github.io/Flippers-site/images/item-mv.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://huruuuuuugi.github.io/Flippers-site/item.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap">
     <link rel="icon" href="images/logo.png">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./java.js?v=8" defer></script>
-    <link rel="stylesheet" href="./common.css?v=8">
-    <link rel="stylesheet" href="./item.css?v=8">
+    <script src="./java.js?v=11" defer></script>
+    <link rel="stylesheet" href="./common.css?v=11">
+    <link rel="stylesheet" href="./item.css?v=11">
 </head>
 
 <body>
@@ -96,86 +99,111 @@
             </select>
         </div>
 
-        <ul class="item-list  item-list">
-            <div class="item-card js-item" data-genre="tops">
-                <li><img loading="lazy" src="images/item1.jpeg" class="item" alt="ラルフニット"></li>
-                <p>RalphLauren/ニット</p>
-            </div>
-            <div class="item-card js-item" data-genre="pants">
-                <li><img loading="lazy" src="images/item2.jpeg" class="item" alt="ラルフハーフパンツ"></li>
-                <p>RalphLauren/ハーフパンツ</p>
-            </div>
-            <div class="item-card js-item" data-genre="outer">
-                <li><img loading="lazy" src="images/item3.jpeg" class="item" alt="パタゴニアベスト"></li>
-                <p>Patagonia/フリースベスト</p>
-            </div>
+        <ul class="item-list">
+            <li class="item-card" data-genre="tops">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item1.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">RalphLauren/ニット</span>
+                    </button>
+                </li>
+            <li class="item-card" data-genre="pants">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item2.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">RalphLauren/ハーフパンツ</span>
+                    </button>
+                </li>
+            <li class="item-card" data-genre="outer">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item3.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">Patagonia/フリースベスト</span>
+                    </button>
+                </li>
 
-            <div class="item-card js-item" data-genre="outer">
-                <li><img loading="lazy" src="images/item4.jpeg" class="item" alt="カーハートジャケット"></li>
-                <p>Carhartt/アクティブジャケット</p>
-            </div>
+            <li class="item-card" data-genre="outer">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item4.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">Carhartt/アクティブジャケット</span>
+                    </button>
+                </li>
 
-            <div class="item-card js-item" data-genre="shoes">
-                <li><img loading="lazy" src="images/item5.jpeg" class="item" alt="ダナー"></li>
-                <p>Danner/ブーツ</p>
-            </div>
-            <div class="item-card js-item" data-genre="outer">
-                <li><img loading="lazy" src="images/item6.jpeg" class="item" alt="シェラデザイン"></li>
-                <p>シェラデザイン/マウンテンパーカー</p>
-            </div>
-            <div class="item-card js-item" data-genre="tops">
-                <li><img loading="lazy" src="images/item7.jpeg" class="item" alt="usa製T"></li>
-                <p>usa製/Tシャツ</p>
-            </div>
-            <div class="item-card js-item" data-genre="tops">
-                <li><img loading="lazy" src="images/item8.jpeg" class="item" alt="VANSON"></li>
-                <p>VANSON/Tシャツ</p>
-            </div>
-            <div class="item-card js-item" data-genre="tops">
-                <li><img loading="lazy" src="images/item9.jpeg" class="item" alt="Champion"></li>
-                <p>Champion/ベースボールシャツ</p>
-            </div>
-            <div class="item-card js-item" data-genre="outer">
-                <li><img loading="lazy" src="images/item10.jpeg" class="item" alt="Mocoys"></li>
-                <p>REALMocoYs/レザージャケット</p>
-            </div>
-            <div class="item-card js-item" data-genre="outer">
-                <li><img loading="lazy" src="images/item11.jpeg" class="item" alt="ノースフェイス"></li>
-                <p>THENORTHFACE/ダウンジャケット</p>
-            </div>
-            <div class="item-card js-item" data-genre="shoes">
-                <li><img loading="lazy" src="images/item12.jpeg" class="item" alt="adidas"></li>
-                <p>adidas/26cm</p>
-            </div>
-            <div class="item-card js-item" data-genre="bags">
-                <li><img loading="lazy" src="images/item13.jpeg" class="item" alt="パタゴニアのショルダーバッグ"></li>
-                <p>Patagonia/ショルダーバッグ</p>
-            </div>
+            <li class="item-card" data-genre="shoes">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item5.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">Danner/ブーツ</span>
+                    </button>
+                </li>
+            <li class="item-card" data-genre="outer">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item6.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">シェラデザイン/マウンテンパーカー</span>
+                    </button>
+                </li>
+            <li class="item-card" data-genre="tops">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item7.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">usa製/Tシャツ</span>
+                    </button>
+                </li>
+            <li class="item-card" data-genre="tops">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item8.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">VANSON/Tシャツ</span>
+                    </button>
+                </li>
+            <li class="item-card" data-genre="tops">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item9.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">Champion/ベースボールシャツ</span>
+                    </button>
+                </li>
+            <li class="item-card" data-genre="outer">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item10.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">REALMocoYs/レザージャケット</span>
+                    </button>
+                </li>
+            <li class="item-card" data-genre="outer">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item11.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">THENORTHFACE/ダウンジャケット</span>
+                    </button>
+                </li>
+            <li class="item-card" data-genre="shoes">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item12.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">adidas/26cm</span>
+                    </button>
+                </li>
+            <li class="item-card" data-genre="bags">
+                    <button type="button" class="item-card-btn js-item" aria-haspopup="dialog">
+                        <span class="item-card-photo"><img loading="lazy" src="images/item13.jpeg" class="item" alt=""></span>
+                        <span class="item-card-name">Patagonia/ショルダーバッグ</span>
+                    </button>
+                </li>
         </ul>
 
 
         <!-- ライトボックスモーダル -->
         <div class="item-modal-overlay" id="item-modal-overlay">
-            <div class="item-modal-box">
-                <button class="item-modal-close" id="item-modal-close">×</button>
-                <button class="item-modal-nav prev" id="item-modal-prev">←</button>
+            <div class="item-modal-box" role="dialog" aria-modal="true" aria-label="商品の拡大表示">
+                <button type="button" class="item-modal-close" id="item-modal-close" aria-label="閉じる">×</button>
+                <button type="button" class="item-modal-nav prev" id="item-modal-prev" aria-label="前の商品">←</button>
                 <div class="item-modal-photo photo-block" id="item-modal-photo">
                     <img id="item-modal-img" src="" alt="">
                 </div>
-                <button class="item-modal-nav next" id="item-modal-next">→</button>
+                <button type="button" class="item-modal-nav next" id="item-modal-next" aria-label="次の商品">→</button>
                 <div class="item-modal-info">
-                    <div class="item-modal-desc" id="item-modal-desc"></div>
+                    <div class="item-modal-desc" id="item-modal-desc" aria-live="polite"></div>
                 </div>
             </div>
         </div>
 
         <div class="cta-box">
-            <p class="cta-text">商品についてのご質問はこちら<br>000-0000-0000（土日祝 9:00〜17:00）</p>
+            <p class="cta-text">実物はぜひ、お店で<br>手に取ってみてください</p>
             <div class="cta-btn">
-                <a href="tel:00000000000" class="cta-btn-phone">お電話でお問い合わせ
-                    <img src="images/phone.png" class="cta-btn-icon" alt="">
-                </a>
+                <a href="./index.html#access" class="cta-btn-access">営業日とアクセスを見る</a>
             </div>
+            <p class="cta-note">商品についてのご質問：<a href="tel:00000000000">000-0000-0000</a><br>（土日祝 9:00〜17:00）</p>
         </div>
 
     </main>

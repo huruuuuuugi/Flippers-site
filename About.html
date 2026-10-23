@@ -10,16 +10,19 @@
     <meta property="og:site_name" content="古着屋フリッパーズ">
     <meta property="og:title" content="店内紹介｜古着屋フリッパーズ（宮城県登米市）">
     <meta property="og:description" content="牛舎を改装した古着屋フリッパーズの店内を、歩く順番にご紹介。1階・2階・別棟のコーナーと店内マップで、来店前に雰囲気をつかめます。">
-    <meta property="og:image" content="images/shoptour.top.jpg">
+    <meta property="og:url" content="https://huruuuuuugi.github.io/Flippers-site/About.html">
+    <meta property="og:image" content="https://huruuuuuugi.github.io/Flippers-site/images/shoptour.top.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://huruuuuuugi.github.io/Flippers-site/About.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap">
     <link rel="icon" href="images/logo.png">
-    <link rel="stylesheet" href="./About.css?v=8">
-    <link rel="stylesheet" href="./common.css?v=8">
+    <link rel="stylesheet" href="./About.css?v=11">
+    <link rel="stylesheet" href="./common.css?v=11">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="java.js?v=8" defer></script>
+    <script src="java.js?v=11" defer></script>
 </head>
 
 <body>
@@ -82,7 +85,7 @@
                 <h2 class="mv-title">shoptour
                 </h2>
                 <h3 class="sub-title">店内紹介</h3>
-                <p class="title-box-text">駐車場から母屋の2階まで、店内は5つのコーナーに分かれています。
+                <p class="title-box-text">駐車場から牛舎の2階まで、店内は5つのコーナーに分かれています。
                     <br>歩く順番のまま、ご案内します。
                 </p>
             </div>
@@ -94,7 +97,7 @@
             <aside class="sidebar" aria-label="店内マップ">
                 <div class="sidebar-title">STORE MAP</div>
                 <div class="fm-wrap">
-                    <svg width="100%" viewBox="0 0 290 200">
+                    <svg width="100%" viewBox="0 0 290 200" aria-hidden="true">
                         <rect x="15" y="15" width="170" height="120" fill="none" stroke="var(--line)" stroke-width="1" />
                         <line x1="15" y1="75" x2="185" y2="75" stroke="var(--line)" stroke-width="1" />
                         <line x1="71" y1="15" x2="71" y2="75" stroke="var(--line)" stroke-width="1"
@@ -104,7 +107,7 @@
                         <path d="M188 60L200 60M188 66L200 66M188 72L200 72M188 78L200 78" stroke="var(--ink-soft)"
                             stroke-width="1" />
                         <rect x="205" y="140" width="55" height="55" fill="none" stroke="var(--line)" stroke-width="1" />
-                        <text x="100" y="10" text-anchor="middle" font-size="10" fill="var(--ink-soft)">母屋(2F)</text>
+                        <text x="100" y="10" text-anchor="middle" font-size="10" fill="var(--ink-soft)">牛舎（上：2階／下：1階）</text>
                         <text x="232" y="135" text-anchor="middle" font-size="10" fill="var(--ink-soft)">別棟</text>
                         <text x="50" y="150" text-anchor="middle" font-size="10" fill="var(--ink-soft)">入口</text>
                         <line x1="50" y1="140" x2="50" y2="130" stroke="#622E2E" stroke-width="1" />
@@ -200,21 +203,21 @@
         </p>
 
         <div class="about-cta-btn">
-            <a href="https://maps.app.goo.gl/2Ac7h8dpWxdJpaqP6" class="map">MAPを見る
-                <img src="images/Map pin.png" class="map-icon" alt="map-icon">
+            <a href="https://maps.app.goo.gl/2Ac7h8dpWxdJpaqP6" class="map">道順を見る
+                <img src="images/Map pin.png" class="map-icon" alt="">
             </a>
         </div>
     </div>
 
     <!-- モバイル向け: フローティングボタン + モーダル -->
-    <button class="map-fab" id="map-fab-btn"><i>&#9737;</i>MAP</button>
+    <button class="map-fab" id="map-fab-btn" aria-haspopup="dialog"><i aria-hidden="true">&#9737;</i>店内図</button>
 
     <div class="map-modal-overlay" id="map-modal-overlay">
-        <div class="map-modal-box">
-            <button class="map-modal-close" id="map-modal-close">×</button>
+        <div class="map-modal-box" role="dialog" aria-modal="true" aria-label="店内図">
+            <button type="button" class="map-modal-close" id="map-modal-close" aria-label="閉じる">×</button>
             <div class="sidebar-title">STORE MAP</div>
             <div class="fm-wrap">
-                <svg width="100%" viewBox="0 0 290 200">
+                <svg width="100%" viewBox="0 0 290 200" aria-hidden="true">
                     <rect x="15" y="15" width="170" height="120" fill="none" stroke="var(--line)" stroke-width="1" />
                     <line x1="15" y1="75" x2="185" y2="75" stroke="var(--line)" stroke-width="1" />
                     <line x1="71" y1="15" x2="71" y2="75" stroke="var(--line)" stroke-width="1"
@@ -224,7 +227,7 @@
                     <path d="M188 60L200 60M188 66L200 66M188 72L200 72M188 78L200 78" stroke="var(--ink-soft)"
                         stroke-width="1" />
                     <rect x="205" y="140" width="55" height="55" fill="none" stroke="var(--line)" stroke-width="1" />
-                    <text x="100" y="10" text-anchor="middle" font-size="10" fill="var(--ink-soft)">母屋(2F)</text>
+                    <text x="100" y="10" text-anchor="middle" font-size="10" fill="var(--ink-soft)">牛舎（上：2階／下：1階）</text>
                     <text x="232" y="135" text-anchor="middle" font-size="10" fill="var(--ink-soft)">別棟</text>
                     <text x="50" y="150" text-anchor="middle" font-size="10" fill="var(--ink-soft)">入口</text>
                     <line x1="50" y1="140" x2="50" y2="130" stroke="#622E2E" stroke-width="1" />

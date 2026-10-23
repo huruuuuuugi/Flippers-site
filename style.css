@@ -299,8 +299,8 @@ body {
     padding: var(--space-16);
 }
 
-/* 5項目なので最後だけ横いっぱいに */
-.first-visit-list li:last-child {
+/* 文の長い項目は横いっぱいに */
+.first-visit-list li.is-wide {
     grid-column: 1 / -1;
 }
 
@@ -737,11 +737,11 @@ font-size: 16px;
     }
 
     .first-visit-list {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: var(--space-16);
     }
 
-    .first-visit-list li:last-child {
+    .first-visit-list li.is-wide {
         grid-column: auto;
     }
 

@@ -22,14 +22,27 @@ label {
     display: inline-block;
 }
 
-.cta-btn-phone {
+.cta-btn-access {
     background-color: #fff;
     color: #622E2E;
+    font-weight: bold;
     display: flex;
     align-items: center;
+    gap: var(--space-8);
     border-radius: 64px;
     justify-content: center;
-    padding: var(--space-16)
+    padding: var(--space-16) var(--space-24);
+    white-space: nowrap;
+}
+
+/* 電話は控えめな案内として、ボタンの下に小さく */
+.cta-note {
+    padding-top: var(--space-16);
+    font-size: 13px;
+}
+
+.cta-note a {
+    text-decoration: underline;
 }
 
 .cta-box {

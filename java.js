@@ -11,6 +11,9 @@ function openMenu() {
     drawer.setAttribute('aria-hidden', 'false');
 
     document.body.style.overflow = 'hidden';
+
+    // キーボードで操作する人のために、メニューの中へフォーカスを移す
+    menuClose.focus({ preventScroll: true });
 }
 
 function closeMenu() {
@@ -201,14 +204,21 @@ $(function () {
             scrollTop: target.offset().top - $('#header').outerHeight()
         }, 500);
     });
+    function closeMapModal() {
+        $('#map-modal-overlay').fadeOut(200);
+        // 開いたボタンにフォーカスを戻す
+        $('#map-fab-btn').trigger('focus');
+    }
+
     $('#map-fab-btn').on('click', function () {
         $('#map-modal-overlay').css('display', 'flex').hide().fadeIn(200);
+        $('#map-modal-close').trigger('focus');
     });
     $('#map-modal-close, #map-modal-overlay').on('click', function (e) {
-        if (e.target === this) { $('#map-modal-overlay').fadeOut(200); }
+        if (e.target === this) { closeMapModal(); }
     });
     $(document).on('keydown', function (e) {
-        if (e.key === 'Escape') { $('#map-modal-overlay').fadeOut(200); }
+        if (e.key === 'Escape' && $('#map-modal-overlay').is(':visible')) { closeMapModal(); }
     });
 
 
@@ -238,6 +248,8 @@ $(function () {
         // ライトボックスで送る対象（ジャンルで絞り込み中は表示中の商品だけ）
         let $slideItems = $items;
         let currentIndex = 0;
+        // 閉じたときにフォーカスを戻す先（開いた商品カード）
+        let $opener = $();
 
         // ライトボックスの内容を表示する
         function renderItemModal() {
@@ -245,15 +257,14 @@ $(function () {
 
             // 商品画像を取得
             const imgSrc = $item.find('img').attr('src');
-            const imgAlt = $item.find('img').attr('alt');
 
             // 商品名を取得
-            const itemName = $item.find('p').text();
+            const itemName = $item.find('.item-card-name').text();
 
             // ライトボックスに表示
 
             $('#item-modal-img').attr('src', imgSrc);
-            $('#item-modal-img').attr('alt', imgAlt);
+            $('#item-modal-img').attr('alt', itemName);
             $('#item-modal-desc').text(itemName);
         }
 
@@ -267,8 +278,15 @@ $(function () {
             // ライトボックスの内容を更新
             renderItemModal();
             // ライトボックスを表示
+            $opener = $(this);
             $('#item-modal-overlay').css('display', 'flex').hide().fadeIn(200);
+            $('#item-modal-close').trigger('focus');
         });
+
+        function closeItemModal() {
+            $('#item-modal-overlay').fadeOut(200);
+            $opener.trigger('focus');
+        }
 
         // ← 前の商品
         $('#item-modal-prev').on('click', function () {
@@ -284,21 +302,19 @@ $(function () {
         });
 
         // ×で閉じる
-        $('#item-modal-close').on('click', function () {
-            $('#item-modal-overlay').fadeOut(200);
-        });
+        $('#item-modal-close').on('click', closeItemModal);
 
         // 背景をクリックして閉じる
         $('#item-modal-overlay').on('click', function (e) {
             if (e.target === this) {
-                $('#item-modal-overlay').fadeOut(200);
+                closeItemModal();
             }
         });
 
         // Escキーで閉じる
         $(document).on('keydown', function (e) {
             if ($('#item-modal-overlay').is(':visible')) {
-                if (e.key === 'Escape') { $('#item-modal-overlay').fadeOut(200); }
+                if (e.key === 'Escape') { closeItemModal(); }
                 if (e.key === 'ArrowLeft') { $('#item-modal-prev').click(); }
                 if (e.key === 'ArrowRight') { $('#item-modal-next').click(); }
             }
