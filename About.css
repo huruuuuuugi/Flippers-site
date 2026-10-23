@@ -86,7 +86,10 @@ p {
 /* フッターの .wrapper と衝突しないよう番号ラベルに限定 */
 .sec-number .wrapper {
     color: #622E2E;
+    background-color: #FFF5E6;
+    border-radius: 4px;
     display: inline-block;
+    padding-block: var(--space-4);
     padding-inline: var(--space-8);
     font-size: 13px;
 }

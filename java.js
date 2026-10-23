@@ -45,9 +45,9 @@ menuClose.addEventListener('click', closeMenu);
 scrim.addEventListener('click', closeMenu);
 
 
-// Escapeキーで閉じる
+// Escapeキーで閉じる（メニューが開いているときだけ）
 document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' && drawer.classList.contains('is-open')) {
         closeMenu();
     }
 });
